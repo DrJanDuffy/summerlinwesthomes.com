@@ -166,7 +166,8 @@ export default function SummerlinWestHomes() {
           toggleSaved={toggleSaved}
         />
       )}
-      {activeSection === 'communities' && <CommunitiesSection />}
+      {activeSection === 'villages' && <VillagesSection />}
+      {activeSection === 'market-data' && <MarketDataSection />}
       {activeSection === 'about' && <AboutSection />}
       
       {showContactModal && <ContactModal onClose={() => setShowContactModal(false)} />}
@@ -196,12 +197,13 @@ function Header({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navigationItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'properties', label: 'Properties' },
-    { id: 'communities', label: 'Communities' },
-    { id: 'about', label: 'About' }
-  ];
+            const navigationItems = [
+            { id: 'home', label: 'Home' },
+            { id: 'properties', label: 'Properties' },
+            { id: 'villages', label: 'Villages' },
+            { id: 'market-data', label: 'Market Data' },
+            { id: 'about', label: 'About' }
+          ];
 
   return (
     <header className={cn(
@@ -752,84 +754,56 @@ function PropertiesSection({
   );
 }
 
-// Communities Section Component
-function CommunitiesSection() {
-  const allCommunities = [
-    { 
-      name: 'The Ridges', 
-      type: 'Luxury Golf Community', 
-      homes: 450, 
-      amenities: ['Golf Course', 'Club House', 'Tennis Courts', 'Spa'],
-      priceRange: '$1M - $25M',
-      description: 'Premier golf course community with custom estates'
-    },
-    { 
-      name: 'The Summit', 
-      type: 'Mountain Living', 
-      homes: 600, 
-      amenities: ['Parks', 'Trails', 'Recreation Center', 'Pool'],
-      priceRange: '$800K - $5M',
-      description: 'Elevated living with panoramic mountain views'
-    },
-    { 
-      name: 'Red Rock Country Club', 
-      type: 'Private Golf Club', 
-      homes: 350, 
-      amenities: ['Private Golf', 'Dining', 'Fitness Center', 'Spa'],
-      priceRange: '$750K - $8M',
-      description: 'Exclusive country club lifestyle'
-    },
-    { 
-      name: 'Reverence', 
-      type: 'Active Adult 55+', 
-      homes: 300, 
-      amenities: ['Golf Course', 'Recreation Center', 'Pool', 'Tennis'],
-      priceRange: '$500K - $2M',
-      description: 'Premier active adult community'
-    }
-  ];
-
+// Villages Section Component
+function VillagesSection() {
   return (
     <section className="py-24">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-12 text-center">Summerlin West Communities</h2>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {allCommunities.map((community) => (
-            <div key={community.name} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
-              <div className="h-48 bg-gradient-to-br from-amber-400 to-orange-500"></div>
-              <div className="p-8">
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h3 className="text-2xl font-bold text-gray-900">{community.name}</h3>
-                    <p className="text-amber-600 font-semibold">{community.type}</p>
-                  </div>
-                  <span className="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-medium">
-                    {community.homes} Homes
-                  </span>
-                </div>
-                
-                <p className="text-gray-600 mb-4">{community.description}</p>
-                <p className="font-semibold text-gray-900 mb-4">Price Range: {community.priceRange}</p>
-                
-                <div className="mb-6">
-                  <h4 className="font-semibold mb-2">Community Amenities:</h4>
-                  <div className="grid grid-cols-2 gap-2">
-                    {community.amenities.map((amenity) => (
-                      <span key={amenity} className="text-sm text-gray-600 flex items-center space-x-1">
-                        <ChevronRight className="h-3 w-3 text-amber-500" />
-                        <span>{amenity}</span>
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                
-                <button className="w-full bg-amber-600 text-white py-3 rounded-lg font-medium hover:bg-amber-700 transition-colors">
-                  Explore {community.name}
-                </button>
-              </div>
-            </div>
-          ))}
+      <div className="container mx-auto px-4 text-center">
+        <h2 className="text-3xl font-bold mb-8">Summerlin West Villages</h2>
+        <p className="text-gray-600 mb-12 max-w-2xl mx-auto">
+          Discover the unique character and luxury lifestyle of each village in Summerlin West
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="/villages"
+            className="bg-amber-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-amber-700 transition-colors"
+          >
+            Explore All Villages
+          </a>
+          <a 
+            href="/properties/search"
+            className="border-2 border-amber-600 text-amber-600 px-8 py-3 rounded-lg font-semibold hover:bg-amber-50 transition-colors"
+          >
+            Search Properties
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Market Data Section Component
+function MarketDataSection() {
+  return (
+    <section className="py-24">
+      <div className="container mx-auto px-4 text-center">
+        <h2 className="text-3xl font-bold mb-8">Market Data & Trends</h2>
+        <p className="text-gray-600 mb-12 max-w-2xl mx-auto">
+          Real-time market insights and trends exclusively for Summerlin West properties
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="/market-data"
+            className="bg-amber-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-amber-700 transition-colors"
+          >
+            View Market Data
+          </a>
+          <a 
+            href="/properties/search"
+            className="border-2 border-amber-600 text-amber-600 px-8 py-3 rounded-lg font-semibold hover:bg-amber-50 transition-colors"
+          >
+            Search Properties
+          </a>
         </div>
       </div>
     </section>
