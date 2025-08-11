@@ -1,17 +1,31 @@
 {
-  "name": "nextjs",
-  "version": "0.1.0",
+  "name": "summerlinwesthomes.com",
+  "version": "1.0.0",
+  "description": "Professional real estate website for Summerlin West Homes",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "push": "powershell -ExecutionPolicy Bypass -File .\\quick-push.ps1"
   },
   "dependencies": {
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.4.6"
+    "next": "15.4.6",
+    "@headlessui/react": "^2.0.0",
+    "@heroicons/react": "^2.1.1",
+    "clsx": "^2.1.0",
+    "tailwind-merge": "^2.2.1",
+    "framer-motion": "^11.0.8",
+    "react-hook-form": "^7.50.1",
+    "zod": "^3.22.4",
+    "@hookform/resolvers": "^3.3.4"
   },
   "devDependencies": {
     "typescript": "^5",
@@ -19,6 +33,23 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4"
-  }
+    "tailwindcss": "^4",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "15.4.6",
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.11",
+    "@typescript-eslint/eslint-plugin": "^7.1.0",
+    "@typescript-eslint/parser": "^7.1.0"
+  },
+  "keywords": [
+    "real-estate",
+    "summerlin",
+    "las-vegas",
+    "homes",
+    "nextjs",
+    "typescript",
+    "tailwindcss"
+  ],
+  "author": "Summerlin West Homes",
+  "license": "MIT"
 }
