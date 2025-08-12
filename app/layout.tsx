@@ -137,7 +137,7 @@ export default function RootLayout({
           }
         `}</style>
 
-        {/* Enhanced Local Business Schema for SEO */}
+        {/* Enhanced Local Business Schema Markup */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -146,13 +146,24 @@ export default function RootLayout({
               '@type': 'RealEstateAgent',
               '@id': 'https://summerlinwesthomes.com/#organization',
               name: 'Summerlin West Homes',
-              alternateName: 'Summerlin West Real Estate',
+              alternateName: 'Summerlin West Luxury Real Estate',
+              description:
+                'Premier luxury real estate agency specializing in Summerlin West, Las Vegas. Expert agents with deep local market knowledge and personalized service for discerning buyers and sellers.',
               url: 'https://summerlinwesthomes.com',
+              logo: {
+                '@type': 'ImageObject',
+                url: 'https://summerlinwesthomes.com/images/logo-summerlin-west-homes.png',
+                width: 300,
+                height: 100,
+              },
+              image: {
+                '@type': 'ImageObject',
+                url: 'https://summerlinwesthomes.com/images/hero-summerlin-west-luxury-homes.jpg',
+                width: 1200,
+                height: 630,
+              },
               telephone: '+1-702-555-0100',
               email: 'info@summerlinwesthomes.com',
-              description: 'Premier luxury real estate agency specializing in Summerlin West, Las Vegas',
-              logo: 'https://summerlinwesthomes.com/logo.png',
-              image: 'https://summerlinwesthomes.com/images/office.jpg',
               address: {
                 '@type': 'PostalAddress',
                 streetAddress: '123 Luxury Lane',
@@ -166,6 +177,18 @@ export default function RootLayout({
                 latitude: 36.1699,
                 longitude: -115.1398,
               },
+              areaServed: [
+                {
+                  '@type': 'City',
+                  name: 'Las Vegas',
+                  sameAs: 'https://en.wikipedia.org/wiki/Las_Vegas',
+                },
+                {
+                  '@type': 'Place',
+                  name: 'Summerlin West',
+                  description: 'Premier master-planned community in Las Vegas',
+                },
+              ],
               serviceArea: {
                 '@type': 'GeoCircle',
                 geoMidpoint: {
@@ -173,69 +196,131 @@ export default function RootLayout({
                   latitude: 36.1699,
                   longitude: -115.1398,
                 },
-                geoRadius: '5000',
+                geoRadius: '15000',
               },
-              areaServed: [
+              openingHours: [
+                'Mo-Fr 09:00-18:00',
+                'Sa 10:00-16:00',
+                'Su 12:00-16:00',
+              ],
+              contactPoint: [
                 {
-                  '@type': 'City',
-                  name: 'Summerlin West',
-                  containedInPlace: {
-                    '@type': 'City',
-                    name: 'Las Vegas',
-                    containedInPlace: {
-                      '@type': 'State',
-                      name: 'Nevada'
-                    }
-                  }
+                  '@type': 'ContactPoint',
+                  telephone: '+1-702-555-0100',
+                  contactType: 'customer service',
+                  availableLanguage: 'English',
+                  hoursAvailable: {
+                    '@type': 'OpeningHoursSpecification',
+                    dayOfWeek: [
+                      'Monday',
+                      'Tuesday',
+                      'Wednesday',
+                      'Thursday',
+                      'Friday',
+                    ],
+                    opens: '09:00',
+                    closes: '18:00',
+                  },
                 },
                 {
-                  '@type': 'PostalCode',
-                  postalCode: '89135'
+                  '@type': 'ContactPoint',
+                  telephone: '+1-702-555-0101',
+                  contactType: 'sales',
+                  availableLanguage: 'English',
                 },
-                {
-                  '@type': 'PostalCode',
-                  postalCode: '89138'
-                }
+              ],
+              sameAs: [
+                'https://www.facebook.com/summerlinwesthomes',
+                'https://www.instagram.com/summerlinwesthomes',
+                'https://www.linkedin.com/company/summerlin-west-homes',
+                'https://www.youtube.com/@summerlinwesthomes',
               ],
               hasOfferCatalog: {
                 '@type': 'OfferCatalog',
-                name: 'Summerlin West Properties',
+                name: 'Luxury Properties in Summerlin West',
                 itemListElement: [
                   {
                     '@type': 'Offer',
                     itemOffered: {
-                      '@type': 'Service',
-                      name: 'Luxury Home Sales',
-                      description: 'Exclusive luxury properties in Summerlin West'
-                    }
+                      '@type': 'Product',
+                      name: 'Luxury Homes',
+                      description:
+                        'Premium properties in Summerlin West communities',
+                    },
                   },
                   {
                     '@type': 'Offer',
                     itemOffered: {
                       '@type': 'Service',
-                      name: 'Property Search',
-                      description: 'Personalized property search in Summerlin West'
-                    }
-                  }
-                ]
+                      name: 'Real Estate Consultation',
+                      description:
+                        'Expert guidance for luxury property transactions',
+                    },
+                  },
+                ],
               },
-              openingHours: [
-                'Mo-Fr 09:00-18:00',
-                'Sa 10:00-16:00',
-                'Su 12:00-16:00'
+              foundingDate: '2010',
+              numberOfEmployees: '15',
+              award: [
+                'Top Producer - Las Vegas Real Estate',
+                'Best of Summerlin - Luxury Real Estate',
+                '5-Star Client Satisfaction Rating',
               ],
-              contactPoint: {
-                '@type': 'ContactPoint',
-                telephone: '+1-702-555-0100',
-                contactType: 'customer service',
-                areaServed: 'US',
-                availableLanguage: 'English'
+              review: [
+                {
+                  '@type': 'Review',
+                  reviewRating: {
+                    '@type': 'Rating',
+                    ratingValue: '5',
+                    bestRating: '5',
+                  },
+                  author: {
+                    '@type': 'Person',
+                    name: 'John & Jane Doe',
+                  },
+                  reviewBody:
+                    'The Summerlin West Homes team made our home buying experience seamless and enjoyable. Their expertise in the local market is unmatched!',
+                },
+              ],
+              aggregateRating: {
+                '@type': 'AggregateRating',
+                ratingValue: '4.9',
+                reviewCount: '127',
+                bestRating: '5',
               },
-              sameAs: [
-                'https://www.facebook.com/summerlinwesthomes',
-                'https://www.linkedin.com/company/summerlinwesthomes',
-                'https://www.instagram.com/summerlinwesthomes'
-              ]
+              priceRange: '$$$',
+              currenciesAccepted: 'USD',
+              paymentAccepted: [
+                'Cash',
+                'Credit Card',
+                'Check',
+                'Wire Transfer',
+              ],
+              knowsAbout: [
+                'Summerlin West Real Estate Market',
+                'Luxury Home Sales',
+                'Golf Course Properties',
+                'New Construction',
+                'Investment Properties',
+                'Las Vegas Luxury Market',
+              ],
+                             communities: [
+                 {
+                   '@type': 'Place',
+                   name: 'The Ridges',
+                   description: 'Luxury golf community in Summerlin West',
+                 },
+                 {
+                   '@type': 'Place',
+                   name: 'The Summit',
+                   description: 'Mountain living community',
+                 },
+                 {
+                   '@type': 'Place',
+                   name: 'Red Rock Country Club',
+                   description: 'Private golf club community',
+                 },
+               ],
             }),
           }}
         />

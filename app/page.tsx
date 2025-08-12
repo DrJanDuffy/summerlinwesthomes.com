@@ -31,6 +31,11 @@ import { cn } from '@/lib/utils';
 import { formatPrice, formatSquareFeet } from '@/lib/utils';
 import type { Property, Agent } from '@/types/real-estate';
 
+// Import the new page components
+import HomeValuationPage from './home-valuation/page';
+import SellYourHomePage from './sell-your-home/page';
+import MortgageCalculatorPage from './mortgage-calculator/page';
+
 // Main App Component - Summerlin West Homes
 export default function SummerlinWestHomes() {
   const [activeSection, setActiveSection] = useState('home');
@@ -225,6 +230,9 @@ export default function SummerlinWestHomes() {
       {activeSection === 'villages' && <VillagesSection />}
       {activeSection === 'market-data' && <MarketDataSection />}
       {activeSection === 'about' && <AboutSection />}
+      {activeSection === 'home-valuation' && <HomeValuationSection />}
+      {activeSection === 'sell-your-home' && <SellYourHomeSection />}
+      {activeSection === 'mortgage-calculator' && <MortgageCalculatorSection />}
 
       {showContactModal && (
         <ContactModal onClose={() => setShowContactModal(false)} />
@@ -264,6 +272,9 @@ function Header({
     { id: 'amenities', label: 'Amenities' },
     { id: 'transportation', label: 'Transportation' },
     { id: 'market-data', label: 'Market Data' },
+    { id: 'home-valuation', label: 'Home Value' },
+    { id: 'sell-your-home', label: 'Sell Your Home' },
+    { id: 'mortgage-calculator', label: 'Mortgage Calculator' },
     { id: 'about', label: 'About' },
   ];
 
@@ -1226,6 +1237,21 @@ function ListingsSection() {
       </div>
     </section>
   );
+}
+
+// Home Valuation Section Component
+function HomeValuationSection() {
+  return <HomeValuationPage />;
+}
+
+// Sell Your Home Section Component
+function SellYourHomeSection() {
+  return <SellYourHomePage />;
+}
+
+// Mortgage Calculator Section Component
+function MortgageCalculatorSection() {
+  return <MortgageCalculatorPage />;
 }
 
 // Contact Modal Component

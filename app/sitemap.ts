@@ -73,23 +73,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: weekAgo,
     },
 
-    // Missing Critical Real Estate Pages (Add these to your site)
-    {
-      url: `${baseUrl}/home-valuation`,
-      lastModified: twoDaysAgo,
-    },
-    {
-      url: `${baseUrl}/sell-your-home`,
-      lastModified: twoDaysAgo,
-    },
-    {
-      url: `${baseUrl}/buying-guide`,
-      lastModified: threeDaysAgo,
-    },
-    {
-      url: `${baseUrl}/mortgage-calculator`,
-      lastModified: threeDaysAgo,
-    },
+               // Critical Real Estate Pages (High-Intent Keywords)
+           {
+             url: `${baseUrl}/home-valuation`,
+             lastModified: currentDate,
+           },
+           {
+             url: `${baseUrl}/sell-your-home`,
+             lastModified: currentDate,
+           },
+           {
+             url: `${baseUrl}/mortgage-calculator`,
+             lastModified: currentDate,
+           },
 
     // Local SEO Pages (Google's 2025 Vicinity Update)
     {
