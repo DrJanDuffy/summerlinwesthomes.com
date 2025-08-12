@@ -471,7 +471,7 @@ function StatsBar() {
   );
 }
 
-// RealScout Search Integration Section
+// RealScout Office Listings Section
 function RealScoutSearchEmbed() {
   return (
     <section className="bg-gray-50 py-16">
@@ -479,29 +479,19 @@ function RealScoutSearchEmbed() {
         <div className="mb-8 text-center">
           <h3 className="mb-4 text-3xl font-bold">Find Your Dream Home</h3>
           <p className="mx-auto max-w-2xl text-gray-600">
-            Use our advanced search powered by RealScout to explore available
-            properties with real-time MLS data
+            Browse our current listings powered by RealScout with real-time MLS data
           </p>
         </div>
 
         <div className="mx-auto max-w-6xl rounded-xl bg-white p-8 shadow-xl">
-          <div className="rounded-lg border-2 border-dashed border-amber-300 bg-gradient-to-br from-amber-50 to-orange-50 p-12 text-center">
-            <Search className="mx-auto mb-4 h-16 w-16 text-amber-600" />
-            <h4 className="mb-2 text-xl font-semibold">
-              RealScout Search Integration
-            </h4>
-            <p className="mb-6 text-gray-600">
-              Interactive map search with advanced filters will load here
-            </p>
-            <div className="flex flex-col justify-center gap-4 sm:flex-row">
-              <button className="rounded-lg bg-amber-600 px-6 py-3 font-medium text-white transition-colors hover:bg-amber-700">
-                Launch Full Search
-              </button>
-              <button className="rounded-lg border border-amber-600 px-6 py-3 font-medium text-amber-600 transition-colors hover:bg-amber-50">
-                View Map
-              </button>
-            </div>
-          </div>
+          <realscout-office-listings 
+            agent-encoded-id="QWdlbnQtMjI1MDUw" 
+            sort-order="STATUS_AND_SIGNIFICANT_CHANGE" 
+            listing-status="For Sale" 
+            property-types="SFR,MF" 
+            price-min="600000" 
+            price-max="750000"
+          ></realscout-office-listings>
         </div>
       </div>
     </section>
