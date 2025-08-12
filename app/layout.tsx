@@ -61,13 +61,6 @@ export const metadata: Metadata = {
         type: 'image/webp',
       },
     ],
-    countryName: 'United States',
-    emails: ['info@summerlinwesthomes.com'],
-    phoneNumbers: ['+1-702-555-0100'],
-    streetAddress: '123 Luxury Lane',
-    locality: 'Las Vegas',
-    region: 'NV',
-    postalCode: '89135',
   },
   twitter: {
     card: 'summary_large_image',
@@ -124,6 +117,29 @@ export default function RootLayout({
             width: 100%;
           }
         `}</style>
+        
+        {/* Structured Data for SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'RealEstateAgent',
+              name: 'Summerlin West Homes',
+              url: 'https://summerlinwesthomes.com',
+              telephone: '+1-702-555-0100',
+              email: 'info@summerlinwesthomes.com',
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: '123 Luxury Lane',
+                addressLocality: 'Las Vegas',
+                addressRegion: 'NV',
+                postalCode: '89135',
+                addressCountry: 'US'
+              }
+            })
+          }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} bg-white text-gray-900 antialiased`}
