@@ -1,267 +1,138 @@
-# GitHub SSH & GPG Key Setup Scripts
+# Auto-Push Scripts for Summerlin West Homes
 
-This directory contains automated scripts for setting up SSH and GPG keys for GitHub authentication and commit signing. These scripts handle the entire process from key generation to GitHub configuration.
+These scripts automatically commit and push all changes to git after every update.
 
-## 🎯 What These Scripts Do
+## Available Scripts
 
-The scripts automate the following tasks:
+### 1. PowerShell Script (`auto-push.ps1`)
 
-1. **Check Prerequisites**: Verify Git, OpenSSH, and GPG are installed
-2. **Collect Information**: Gather user details (name, email, GitHub username)
-3. **Generate SSH Keys**: Create Ed25519 SSH key pair for GitHub authentication
-4. **Generate GPG Keys**: Create RSA 4096-bit GPG key for commit signing
-5. **Configure Git**: Set up global Git configuration with the new keys
-6. **Setup SSH Agent**: Start SSH agent and add the private key
-7. **Test Connections**: Verify SSH connectivity to GitHub
-8. **Create Utilities**: Generate convenience scripts for checking key status
+**Recommended for Windows users**
 
-## 📁 Available Scripts
+**Features:**
 
-### 1. **Bash Script** (`setup-github-keys.sh`)
+- ✅ Color-coded output
+- ✅ Error handling and validation
+- ✅ Custom commit messages
+- ✅ Git status checking
+- ✅ Detailed progress reporting
 
-- **Platform**: Linux, macOS, WSL
-- **Features**: Full automation with colored output and error handling
-- **Requirements**: Bash shell, OpenSSH, GPG, Git
-
-### 2. **PowerShell Script** (`setup-github-keys.ps1`)
-
-- **Platform**: Windows 10/11
-- **Features**: Windows-optimized with PowerShell-specific features
-- **Requirements**: PowerShell 5.1+, OpenSSH, GPG4Win, Git for Windows
-
-### 3. **Node.js Script** (`setup-github-keys.js`)
-
-- **Platform**: Cross-platform (Windows, macOS, Linux)
-- **Features**: JavaScript-based automation with async/await
-- **Requirements**: Node.js 14+, OpenSSH, GPG, Git
-
-## 🛠️ Prerequisites
-
-Before running any script, ensure you have:
-
-### Required Software
-
-- **Git**: [Download Git](https://git-scm.com/downloads)
-- **OpenSSH**: Usually included with Git or available as a package
-- **GPG**:
-  - **Windows**: [GPG4Win](https://www.gpg4win.org/)
-  - **macOS**: `brew install gnupg`
-  - **Linux**: `sudo apt-get install gnupg` (Ubuntu/Debian) or equivalent
-
-### GitHub Account
-
-- A GitHub account with access to SSH and GPG key settings
-- Admin access to repositories where you want to use these keys
-
-## 🚀 Quick Start
-
-### Option 1: Bash (Linux/macOS/WSL)
-
-```bash
-# Make script executable
-chmod +x scripts/setup-github-keys.sh
-
-# Run the script
-./scripts/setup-github-keys.sh
-```
-
-### Option 2: PowerShell (Windows)
+**Usage:**
 
 ```powershell
-# Run the script
-.\scripts\setup-github-keys.ps1
+# Run with default commit message
+.\scripts\auto-push.ps1
 
-# Or with parameters
-.\scripts\setup-github-keys.ps1 -Name "Your Name" -Email "your.email@example.com" -GitHubUsername "yourusername"
+# Run with custom commit message
+.\scripts\auto-push.ps1 -CommitMessage "Custom message here"
 ```
 
-### Option 3: Node.js (Cross-platform)
+### 2. Batch File (`auto-push.bat`)
 
-```bash
-# Run the script
-node scripts/setup-github-keys.js
+**Simple alternative for Windows users**
 
-# Or make it executable (Unix-like systems)
-chmod +x scripts/setup-github-keys.js
-./scripts/setup-github-keys.js
+**Features:**
+
+- ✅ Simple execution
+- ✅ Automatic timestamp in commit message
+- ✅ Basic error checking
+- ✅ Easy to run
+
+**Usage:**
+
+```cmd
+# Double-click the file or run from command line
+scripts\auto-push.bat
 ```
 
-## 📋 What Happens During Setup
+## How to Use
 
-### 1. **Prerequisites Check**
+### **Option 1: Run from Project Root**
 
-- Verifies Git, OpenSSH, and GPG are installed
-- Checks for existing configurations
+1. Navigate to your project root directory (`summerlinwesthomes.com`)
+2. Run one of the scripts:
 
-### 2. **User Information Collection**
+   ```bash
+   # PowerShell (recommended)
+   .\scripts\auto-push.ps1
 
-- Prompts for your full name, email, and GitHub username
-- Uses existing Git configuration as defaults when available
+   # Or Batch file
+   scripts\auto-push.bat
+   ```
 
-### 3. **SSH Key Generation**
+### **Option 2: Add to PATH**
 
-- Creates Ed25519 SSH key pair (`id_ed25519_github`)
-- Starts SSH agent and adds the private key
-- Displays the public key for GitHub upload
+1. Copy the script to a directory in your PATH
+2. Run from anywhere:
+   ```bash
+   auto-push
+   ```
 
-### 4. **GPG Key Generation**
+### **Option 3: Create Desktop Shortcut**
 
-- Creates RSA 4096-bit GPG key pair
-- Configures Git to use the key for signing
-- Displays the public key for GitHub upload
+1. Right-click on the script file
+2. Create shortcut
+3. Move shortcut to desktop
+4. Double-click to run
 
-### 5. **Configuration Setup**
+## What the Scripts Do
 
-- Updates Git global configuration
-- Creates SSH config file
-- Sets proper file permissions
-- Creates convenience scripts
+1. **📊 Check Status**: Verify you're in a git repository
+2. **📦 Add Changes**: Stage all modified files (`git add .`)
+3. **💾 Commit**: Create a commit with timestamp
+4. **🚀 Push**: Send changes to GitHub (`git push origin main`)
+5. **✅ Confirm**: Show success message and next steps
 
-## 🔑 After Running the Script
+## After Running
 
-### 1. **Add SSH Key to GitHub**
+- **Vercel** will automatically detect the new commit
+- **Build process** will start immediately
+- **Deployment** typically completes in 2-5 minutes
+- **Your changes** will be live on the website
 
-1. Copy the displayed SSH public key
-2. Go to [GitHub SSH Keys](https://github.com/settings/keys)
-3. Click "New SSH key"
-4. Paste the key and save
+## Customization
 
-### 2. **Add GPG Key to GitHub**
+### **PowerShell Script**
 
-1. Copy the displayed GPG public key
-2. Go to [GitHub GPG Keys](https://github.com/settings/gpg)
-3. Click "New GPG key"
-4. Paste the key and save
+- Edit `auto-push.ps1` to modify commit message format
+- Add additional git commands as needed
+- Customize error handling and validation
 
-### 3. **Test Your Setup**
+### **Batch File**
 
-```bash
-# Test SSH connection
-ssh -T git@github.com
+- Edit `auto-push.bat` to change commit message format
+- Add additional commands before or after git operations
 
-# Test GPG signing
-echo "test" | gpg --clearsign
-```
+## Troubleshooting
 
-## 🔧 Customization Options
+### **"Not in a git repository" Error**
 
-### Script Parameters
+- Make sure you're in the project root directory
+- Verify `.git` folder exists
 
-Most scripts accept parameters for customization:
+### **Permission Denied**
 
-```bash
-# Bash script
-./setup-github-keys.sh --name "Your Name" --email "your.email@example.com" --github "yourusername"
+- Run PowerShell as Administrator
+- Check file permissions
 
-# PowerShell script
-.\setup-github-keys.ps1 -Name "Your Name" -Email "your.email@example.com" -GitHubUsername "yourusername"
+### **Git Authentication Issues**
 
-# Node.js script
-node setup-github-keys.js --name "Your Name" --email "your.email@example.com" --github "yourusername"
-```
+- Ensure your git credentials are configured
+- Check SSH keys or personal access tokens
 
-### Environment Variables
+## Pro Tips
 
-You can also set environment variables:
+1. **Run after every change** to keep your deployment current
+2. **Use custom commit messages** for better tracking
+3. **Check Vercel dashboard** to monitor deployment progress
+4. **Keep scripts in your project** for easy access
 
-```bash
-export GITHUB_NAME="Your Name"
-export GITHUB_EMAIL="your.email@example.com"
-export GITHUB_USERNAME="yourusername"
-./setup-github-keys.sh
-```
+## Safety Features
 
-## 🚨 Troubleshooting
-
-### Common Issues
-
-#### SSH Connection Failed
-
-```bash
-# Check SSH agent
-ssh-add -l
-
-# Test connection with verbose output
-ssh -vT git@github.com
-
-# Restart SSH agent
-eval $(ssh-agent -s)
-ssh-add ~/.ssh/id_ed25519_github
-```
-
-#### GPG Signing Issues
-
-```bash
-# Check GPG keys
-gpg --list-secret-keys
-
-# Test GPG signing
-echo "test" | gpg --clearsign
-
-# Check Git GPG configuration
-git config --global --list | grep gpg
-```
-
-#### Permission Denied
-
-```bash
-# Fix SSH key permissions
-chmod 600 ~/.ssh/id_ed25519_github
-chmod 644 ~/.ssh/id_ed25519_github.pub
-
-# Fix GPG key permissions
-chmod 600 ~/.gnupg/private-keys-v1.d/*
-```
-
-### Getting Help
-
-If you encounter issues:
-
-1. Check the script output for error messages
-2. Verify all prerequisites are installed
-3. Check file permissions
-4. Review GitHub's SSH and GPG documentation
-
-## 📚 Additional Resources
-
-### GitHub Documentation
-
-- [SSH Key Setup](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
-- [GPG Key Setup](https://docs.github.com/en/authentication/managing-commit-signature-verification)
-- [Troubleshooting SSH](https://docs.github.com/en/authentication/troubleshooting-ssh)
-
-### Security Best Practices
-
-- Use strong passphrases for your keys
-- Regularly rotate your keys
-- Never share private keys
-- Use different keys for different services
-
-## 🤝 Contributing
-
-### Reporting Issues
-
-If you find bugs or have suggestions:
-
-1. Check existing issues
-2. Create a new issue with detailed information
-3. Include your operating system and script version
-4. Provide error messages and logs
-
-### Improving Scripts
-
-To contribute improvements:
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## 📄 License
-
-These scripts are provided as-is for educational and practical use. They follow best practices for security and automation.
+- ✅ **Error checking**: Scripts validate each step
+- ✅ **Status reporting**: Shows what will be committed
+- ✅ **Rollback safe**: Only pushes, doesn't delete anything
+- ✅ **Repository validation**: Ensures you're in the right place
 
 ---
 
-_Automate your GitHub setup and focus on what matters most - your code!_
+**Happy Auto-Pushing! 🚀**

@@ -12,7 +12,10 @@
     "type-check": "tsc --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "push": "powershell -ExecutionPolicy Bypass -File .\\quick-push.ps1"
+    "push": "powershell -ExecutionPolicy Bypass -File .\\quick-push.ps1",
+    "auto-push": "powershell -ExecutionPolicy Bypass -File .\\scripts\\auto-push.ps1",
+    "auto-push:custom": "powershell -ExecutionPolicy Bypass -File .\\scripts\\auto-push.ps1 -CommitMessage",
+    "quick-deploy": "npm run auto-push"
   },
   "dependencies": {
     "@headlessui/react": "^2.0.0",

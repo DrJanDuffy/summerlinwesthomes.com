@@ -118,7 +118,7 @@ export default function RootLayout({
           rel="preload"
           href="/_next/static/media/569ce4b8f30dc480-s.p.woff2"
           as="font"
-          crossorigin=""
+          crossOrigin=""
           type="font/woff2"
         />
 
