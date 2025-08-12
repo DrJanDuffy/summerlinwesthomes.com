@@ -84,6 +84,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        {/* RealScout Widget Script and Styles */}
+        <script src="https://em.realscout.com/widgets/realscout-web-components.umd.js" type="module"></script>
+        <style>{`
+          realscout-office-listings {
+            --rs-listing-divider-color: rgb(101, 141, 172);
+            width: 100%;
+          }
+        `}</style>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} bg-white text-gray-900 antialiased`}
       >

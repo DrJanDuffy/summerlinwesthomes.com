@@ -485,18 +485,14 @@ function RealScoutSearchEmbed() {
         </div>
 
         <div className="mx-auto max-w-6xl rounded-xl bg-white p-8 shadow-xl">
-          <div
-            dangerouslySetInnerHTML={{
-              __html: `<realscout-office-listings 
-                agent-encoded-id="QWdlbnQtMjI1MDUw"
-                sort-order="STATUS_AND_SIGNIFICANT_CHANGE"
-                listing-status="For Sale"
-                property-types="SFR,MF"
-                price-min="600000"
-                price-max="750000"
-              ></realscout-office-listings>`,
-            }}
-          />
+          <realscout-office-listings 
+            agent-encoded-id="QWdlbnQtMjI1MDUw"
+            sort-order="STATUS_AND_SIGNIFICANT_CHANGE"
+            listing-status="For Sale"
+            property-types="SFR,MF"
+            price-min="600000"
+            price-max="750000"
+          ></realscout-office-listings>
         </div>
       </div>
     </section>
