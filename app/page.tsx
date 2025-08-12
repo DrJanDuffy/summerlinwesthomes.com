@@ -479,19 +479,24 @@ function RealScoutSearchEmbed() {
         <div className="mb-8 text-center">
           <h3 className="mb-4 text-3xl font-bold">Find Your Dream Home</h3>
           <p className="mx-auto max-w-2xl text-gray-600">
-            Browse our current listings powered by RealScout with real-time MLS data
+            Browse our current listings powered by RealScout with real-time MLS
+            data
           </p>
         </div>
 
         <div className="mx-auto max-w-6xl rounded-xl bg-white p-8 shadow-xl">
-          <realscout-office-listings 
-            agent-encoded-id="QWdlbnQtMjI1MDUw" 
-            sort-order="STATUS_AND_SIGNIFICANT_CHANGE" 
-            listing-status="For Sale" 
-            property-types="SFR,MF" 
-            price-min="600000" 
-            price-max="750000"
-          ></realscout-office-listings>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: `<realscout-office-listings 
+                agent-encoded-id="QWdlbnQtMjI1MDUw"
+                sort-order="STATUS_AND_SIGNIFICANT_CHANGE"
+                listing-status="For Sale"
+                property-types="SFR,MF"
+                price-min="600000"
+                price-max="750000"
+              ></realscout-office-listings>`,
+            }}
+          />
         </div>
       </div>
     </section>
