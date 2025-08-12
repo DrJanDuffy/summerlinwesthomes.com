@@ -2,12 +2,14 @@ import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://summerlinwesthomes.com';
-  
+
   // Use varied, realistic timestamps to avoid Google's manipulative pattern detection
   const currentDate = new Date();
   const yesterday = new Date(currentDate.getTime() - 24 * 60 * 60 * 1000);
   const twoDaysAgo = new Date(currentDate.getTime() - 2 * 24 * 60 * 60 * 1000);
-  const threeDaysAgo = new Date(currentDate.getTime() - 3 * 24 * 60 * 60 * 1000);
+  const threeDaysAgo = new Date(
+    currentDate.getTime() - 3 * 24 * 60 * 60 * 1000
+  );
   const weekAgo = new Date(currentDate.getTime() - 7 * 24 * 60 * 60 * 1000);
 
   return [
@@ -16,7 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: baseUrl,
       lastModified: currentDate,
     },
-    
+
     // Transaction-Intent Pages (Critical for Real Estate SEO)
     {
       url: `${baseUrl}/properties/search`,
@@ -30,7 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/market-data`,
       lastModified: twoDaysAgo,
     },
-    
+
     // Village/Community Pages (Local SEO)
     {
       url: `${baseUrl}/villages`,
@@ -60,7 +62,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/villages/the-vistas`,
       lastModified: weekAgo,
     },
-    
+
     // E-E-A-T Pages (Experience, Expertise, Authority, Trust)
     {
       url: `${baseUrl}/about`,
@@ -70,7 +72,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/contact`,
       lastModified: weekAgo,
     },
-    
+
     // Missing Critical Real Estate Pages (Add these to your site)
     {
       url: `${baseUrl}/home-valuation`,
@@ -88,7 +90,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/mortgage-calculator`,
       lastModified: threeDaysAgo,
     },
-    
+
     // Local SEO Pages (Google's 2025 Vicinity Update)
     {
       url: `${baseUrl}/neighborhoods/downtown-summerlin`,
@@ -102,7 +104,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/amenities/golf-courses`,
       lastModified: weekAgo,
     },
-    
+
     // Content Hub Pages (Topical Authority)
     {
       url: `${baseUrl}/blog`,
@@ -116,7 +118,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/resources`,
       lastModified: threeDaysAgo,
     },
-    
+
     // Team & Trust Pages
     {
       url: `${baseUrl}/team`,
