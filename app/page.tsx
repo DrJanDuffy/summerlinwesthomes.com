@@ -260,6 +260,9 @@ function Header({
     { id: 'properties', label: 'Properties' },
     { id: 'listings', label: 'Listings' },
     { id: 'villages', label: 'Villages' },
+    { id: 'schools', label: 'Schools' },
+    { id: 'amenities', label: 'Amenities' },
+    { id: 'transportation', label: 'Transportation' },
     { id: 'market-data', label: 'Market Data' },
     { id: 'about', label: 'About' },
   ];

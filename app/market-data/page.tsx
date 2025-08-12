@@ -341,7 +341,9 @@ export default function MarketDataPage() {
       {/* Recent Sales */}
       <section className="bg-gray-50 py-16">
         <div className="container mx-auto px-4">
-          <h2 className="mb-8 text-center text-3xl font-bold">Recent Sales in Summerlin West</h2>
+          <h2 className="mb-8 text-center text-3xl font-bold">
+            Recent Sales in Summerlin West
+          </h2>
           <div className="overflow-hidden rounded-xl bg-white shadow-lg">
             <div className="overflow-x-auto">
               <table className="w-full">
@@ -507,7 +509,9 @@ export default function MarketDataPage() {
       <section className="bg-gray-50 py-16">
         <div className="container mx-auto px-4">
           <div className="mb-8 text-center">
-            <h3 className="mb-4 text-3xl font-bold">Current Summerlin West Market Listings</h3>
+            <h3 className="mb-4 text-3xl font-bold">
+              Current Summerlin West Market Listings
+            </h3>
             <p className="mx-auto max-w-2xl text-gray-600">
               Explore active properties that reflect current market conditions
               and pricing trends

@@ -137,17 +137,22 @@ export default function RootLayout({
           }
         `}</style>
 
-        {/* Structured Data for SEO */}
+        {/* Enhanced Local Business Schema for SEO */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'RealEstateAgent',
+              '@id': 'https://summerlinwesthomes.com/#organization',
               name: 'Summerlin West Homes',
+              alternateName: 'Summerlin West Real Estate',
               url: 'https://summerlinwesthomes.com',
               telephone: '+1-702-555-0100',
               email: 'info@summerlinwesthomes.com',
+              description: 'Premier luxury real estate agency specializing in Summerlin West, Las Vegas',
+              logo: 'https://summerlinwesthomes.com/logo.png',
+              image: 'https://summerlinwesthomes.com/images/office.jpg',
               address: {
                 '@type': 'PostalAddress',
                 streetAddress: '123 Luxury Lane',
@@ -156,6 +161,81 @@ export default function RootLayout({
                 postalCode: '89135',
                 addressCountry: 'US',
               },
+              geo: {
+                '@type': 'GeoCoordinates',
+                latitude: 36.1699,
+                longitude: -115.1398,
+              },
+              serviceArea: {
+                '@type': 'GeoCircle',
+                geoMidpoint: {
+                  '@type': 'GeoCoordinates',
+                  latitude: 36.1699,
+                  longitude: -115.1398,
+                },
+                geoRadius: '5000',
+              },
+              areaServed: [
+                {
+                  '@type': 'City',
+                  name: 'Summerlin West',
+                  containedInPlace: {
+                    '@type': 'City',
+                    name: 'Las Vegas',
+                    containedInPlace: {
+                      '@type': 'State',
+                      name: 'Nevada'
+                    }
+                  }
+                },
+                {
+                  '@type': 'PostalCode',
+                  postalCode: '89135'
+                },
+                {
+                  '@type': 'PostalCode',
+                  postalCode: '89138'
+                }
+              ],
+              hasOfferCatalog: {
+                '@type': 'OfferCatalog',
+                name: 'Summerlin West Properties',
+                itemListElement: [
+                  {
+                    '@type': 'Offer',
+                    itemOffered: {
+                      '@type': 'Service',
+                      name: 'Luxury Home Sales',
+                      description: 'Exclusive luxury properties in Summerlin West'
+                    }
+                  },
+                  {
+                    '@type': 'Offer',
+                    itemOffered: {
+                      '@type': 'Service',
+                      name: 'Property Search',
+                      description: 'Personalized property search in Summerlin West'
+                    }
+                  }
+                ]
+              },
+              openingHours: [
+                'Mo-Fr 09:00-18:00',
+                'Sa 10:00-16:00',
+                'Su 12:00-16:00'
+              ],
+              contactPoint: {
+                '@type': 'ContactPoint',
+                telephone: '+1-702-555-0100',
+                contactType: 'customer service',
+                areaServed: 'US',
+                availableLanguage: 'English'
+              },
+              sameAs: [
+                'https://www.facebook.com/summerlinwesthomes',
+                'https://www.linkedin.com/company/summerlinwesthomes',
+                'https://www.instagram.com/summerlinwesthomes'
+              ]
             }),
           }}
         />

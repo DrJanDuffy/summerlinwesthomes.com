@@ -93,15 +93,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Local SEO Pages (Google's 2025 Vicinity Update)
     {
+      url: `${baseUrl}/schools`,
+      lastModified: weekAgo,
+    },
+    {
+      url: `${baseUrl}/amenities`,
+      lastModified: weekAgo,
+    },
+    {
+      url: `${baseUrl}/transportation`,
+      lastModified: weekAgo,
+    },
+    {
       url: `${baseUrl}/neighborhoods/downtown-summerlin`,
-      lastModified: weekAgo,
-    },
-    {
-      url: `${baseUrl}/schools/summerlin-west`,
-      lastModified: weekAgo,
-    },
-    {
-      url: `${baseUrl}/amenities/golf-courses`,
       lastModified: weekAgo,
     },
 
