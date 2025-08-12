@@ -3,6 +3,7 @@
 import React from 'react';
 import { Home, Filter } from 'lucide-react';
 
+export default function ListingsPage() {
   // Sample agent ID - replace with your actual RealScout agent ID
   const agentId = 'QWdlbnQtMjI1MDUw'; // Example: Agent-225050
 

@@ -11,8 +11,8 @@ import {
   Phone,
   Globe,
   Navigation,
-  Parking,
-  GasPump,
+  Car as Parking,
+  Fuel as GasPump,
   Wifi,
   CreditCard,
   Info,
@@ -26,7 +26,8 @@ export default function TransportationPage() {
       name: '215 Beltway (Bruce Woodbury Beltway)',
       category: 'highway',
       type: 'Major Highway',
-      description: 'Primary east-west corridor connecting Summerlin West to the entire Las Vegas Valley',
+      description:
+        'Primary east-west corridor connecting Summerlin West to the entire Las Vegas Valley',
       access: 'Multiple on/off ramps throughout Summerlin West',
       travelTime: {
         'Downtown Las Vegas': '15-20 minutes',
@@ -47,7 +48,8 @@ export default function TransportationPage() {
       name: 'Charleston Boulevard (SR 159)',
       category: 'arterial',
       type: 'Major Arterial',
-      description: 'Historic route connecting Summerlin West to downtown and Red Rock Canyon',
+      description:
+        'Historic route connecting Summerlin West to downtown and Red Rock Canyon',
       access: 'Primary east-west route through Summerlin West',
       travelTime: {
         'Downtown Las Vegas': '20-25 minutes',
@@ -89,7 +91,8 @@ export default function TransportationPage() {
       name: 'RTC Transit - Route 206',
       category: 'public',
       type: 'Public Bus',
-      description: 'Regional Transportation Commission bus service through Summerlin West',
+      description:
+        'Regional Transportation Commission bus service through Summerlin West',
       route: 'Downtown Summerlin ↔ Downtown Las Vegas',
       schedule: 'Every 15-20 minutes, 6:00 AM - 10:00 PM',
       fare: '$2.00 single ride, $5.00 day pass',
@@ -113,7 +116,8 @@ export default function TransportationPage() {
       name: 'McCarran International Airport (LAS)',
       category: 'airport',
       type: 'International Airport',
-      description: 'Primary airport serving Las Vegas and the surrounding region',
+      description:
+        'Primary airport serving Las Vegas and the surrounding region',
       distance: '25 miles from Summerlin West',
       travelTime: '35-45 minutes via 215 Beltway',
       airlines: 'Major carriers including Southwest, American, Delta, United',
@@ -149,7 +153,8 @@ export default function TransportationPage() {
       name: 'Red Rock Canyon Scenic Drive',
       category: 'scenic',
       type: 'Scenic Route',
-      description: '13-mile scenic drive through Red Rock Canyon National Conservation Area',
+      description:
+        '13-mile scenic drive through Red Rock Canyon National Conservation Area',
       access: 'Via Charleston Boulevard (SR 159)',
       distance: '2.3 miles from Summerlin West',
       travelTime: '5-10 minutes from Summerlin West',
@@ -176,7 +181,7 @@ export default function TransportationPage() {
     { id: 'scenic', name: 'Scenic Routes', icon: Navigation },
   ];
 
-  const filteredOptions = transportationOptions.filter(option => {
+  const filteredOptions = transportationOptions.filter((option) => {
     if (selectedCategory === 'all') return true;
     return option.category === selectedCategory;
   });
@@ -190,7 +195,8 @@ export default function TransportationPage() {
             Summerlin West Transportation - Easy Access
           </h1>
           <p className="mx-auto mb-8 max-w-3xl text-xl md:text-2xl">
-            Navigate Summerlin West with ease through our comprehensive transportation guide
+            Navigate Summerlin West with ease through our comprehensive
+            transportation guide
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm">
             <span className="rounded-full bg-white/20 px-4 py-2">
@@ -222,28 +228,38 @@ export default function TransportationPage() {
                   <Car className="h-6 w-6 text-blue-600" />
                 </div>
                 <h3 className="mb-2 font-bold text-blue-900">To Downtown</h3>
-                <p className="text-sm text-blue-700">15-20 minutes via 215 Beltway</p>
+                <p className="text-sm text-blue-700">
+                  15-20 minutes via 215 Beltway
+                </p>
               </div>
               <div className="rounded-lg bg-green-50 p-6 text-center">
                 <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
                   <Plane className="h-6 w-6 text-green-600" />
                 </div>
                 <h3 className="mb-2 font-bold text-green-900">To Airport</h3>
-                <p className="text-sm text-green-700">35-45 minutes via 215 Beltway</p>
+                <p className="text-sm text-green-700">
+                  35-45 minutes via 215 Beltway
+                </p>
               </div>
               <div className="rounded-lg bg-purple-50 p-6 text-center">
                 <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-purple-100">
                   <MapPin className="h-6 w-6 text-purple-600" />
                 </div>
                 <h3 className="mb-2 font-bold text-purple-900">To Red Rock</h3>
-                <p className="text-sm text-purple-700">5-10 minutes via Charleston</p>
+                <p className="text-sm text-purple-700">
+                  5-10 minutes via Charleston
+                </p>
               </div>
               <div className="rounded-lg bg-orange-50 p-6 text-center">
                 <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-orange-100">
                   <Bus className="h-6 w-6 text-orange-600" />
                 </div>
-                <h3 className="mb-2 font-bold text-orange-900">Public Transit</h3>
-                <p className="text-sm text-orange-700">RTC Route 206 every 15-20 min</p>
+                <h3 className="mb-2 font-bold text-orange-900">
+                  Public Transit
+                </h3>
+                <p className="text-sm text-orange-700">
+                  RTC Route 206 every 15-20 min
+                </p>
               </div>
             </div>
           </div>
@@ -307,24 +323,40 @@ export default function TransportationPage() {
                 <div className="p-6">
                   {option.travelTime && (
                     <div className="mb-4">
-                      <h4 className="mb-2 font-semibold text-gray-900">Travel Times:</h4>
+                      <h4 className="mb-2 font-semibold text-gray-900">
+                        Travel Times:
+                      </h4>
                       <div className="grid grid-cols-1 gap-2 text-sm">
-                        {Object.entries(option.travelTime).map(([destination, time]) => (
-                          <div key={destination} className="flex justify-between">
-                            <span className="text-gray-600">{destination}:</span>
-                            <span className="font-medium text-gray-900">{time}</span>
-                          </div>
-                        ))}
+                        {Object.entries(option.travelTime).map(
+                          ([destination, time]) => (
+                            <div
+                              key={destination}
+                              className="flex justify-between"
+                            >
+                              <span className="text-gray-600">
+                                {destination}:
+                              </span>
+                              <span className="font-medium text-gray-900">
+                                {time}
+                              </span>
+                            </div>
+                          )
+                        )}
                       </div>
                     </div>
                   )}
 
                   {option.features && (
                     <div className="mb-4">
-                      <h4 className="mb-2 font-semibold text-gray-900">Features:</h4>
+                      <h4 className="mb-2 font-semibold text-gray-900">
+                        Features:
+                      </h4>
                       <ul className="space-y-1">
                         {option.features.slice(0, 4).map((feature, index) => (
-                          <li key={index} className="flex items-center space-x-2 text-sm text-gray-600">
+                          <li
+                            key={index}
+                            className="flex items-center space-x-2 text-sm text-gray-600"
+                          >
                             <div className="h-1.5 w-1.5 rounded-full bg-purple-500"></div>
                             <span>{feature}</span>
                           </li>
@@ -337,9 +369,13 @@ export default function TransportationPage() {
                     <div className="mb-4 rounded-lg bg-blue-50 p-3">
                       <div className="flex items-center space-x-2">
                         <Info className="h-4 w-4 text-blue-600" />
-                        <span className="text-sm font-medium text-blue-900">Travel Tip</span>
+                        <span className="text-sm font-medium text-blue-900">
+                          Travel Tip
+                        </span>
                       </div>
-                      <p className="mt-1 text-sm text-blue-700">{option.tips}</p>
+                      <p className="mt-1 text-sm text-blue-700">
+                        {option.tips}
+                      </p>
                     </div>
                   )}
 
@@ -381,7 +417,8 @@ export default function TransportationPage() {
             Need Help Navigating Summerlin West?
           </h2>
           <p className="mx-auto mb-8 max-w-2xl text-white/90">
-            Our team can provide detailed directions and transportation recommendations for your visit
+            Our team can provide detailed directions and transportation
+            recommendations for your visit
           </p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <button className="rounded-lg bg-white px-8 py-3 font-semibold text-purple-600 transition-all hover:shadow-xl">

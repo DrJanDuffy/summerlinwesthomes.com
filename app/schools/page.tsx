@@ -275,7 +275,7 @@ export default function SchoolsPage() {
             </h2>
             <p className="mx-auto max-w-2xl text-gray-600">
               Each school offers unique programs and opportunities for your
-              child's education
+              child&apos;s education
             </p>
           </div>
 

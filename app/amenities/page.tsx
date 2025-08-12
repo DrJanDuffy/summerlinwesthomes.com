@@ -2,12 +2,12 @@
 
 import React, { useState } from 'react';
 import {
-  Golf,
+  Flag,
   Mountain,
   ShoppingBag,
   Utensils,
   Car,
-  Park,
+  Trees,
   Heart,
   Star,
   MapPin,
@@ -194,12 +194,12 @@ export default function AmenitiesPage() {
 
   const categories = [
     { id: 'all', name: 'All Amenities', icon: Star },
-    { id: 'golf', name: 'Golf Courses', icon: Golf },
+    { id: 'golf', name: 'Golf Courses', icon: Flag },
     { id: 'outdoor', name: 'Outdoor Recreation', icon: Mountain },
     { id: 'shopping', name: 'Shopping & Dining', icon: ShoppingBag },
     { id: 'healthcare', name: 'Healthcare', icon: Heart },
     { id: 'entertainment', name: 'Entertainment', icon: Users },
-    { id: 'community', name: 'Community', icon: Park },
+    { id: 'community', name: 'Community', icon: Trees },
   ];
 
   const filteredAmenities = amenities.filter((amenity) => {
@@ -371,7 +371,7 @@ export default function AmenitiesPage() {
             <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
               <div className="text-center">
                 <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
-                  <Golf className="h-8 w-8 text-green-600" />
+                  <Flag className="h-8 w-8 text-green-600" />
                 </div>
                 <h3 className="mb-2 text-xl font-bold">Golf Paradise</h3>
                 <p className="text-gray-600">
