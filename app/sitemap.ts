@@ -86,6 +86,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
              url: `${baseUrl}/mortgage-calculator`,
              lastModified: currentDate,
            },
+           {
+             url: `${baseUrl}/buying-guide`,
+             lastModified: currentDate,
+           },
 
     // Local SEO Pages (Google's 2025 Vicinity Update)
     {

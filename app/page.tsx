@@ -35,6 +35,7 @@ import type { Property, Agent } from '@/types/real-estate';
 import HomeValuationPage from './home-valuation/page';
 import SellYourHomePage from './sell-your-home/page';
 import MortgageCalculatorPage from './mortgage-calculator/page';
+import BuyingGuidePage from './buying-guide/page';
 
 // Main App Component - Summerlin West Homes
 export default function SummerlinWestHomes() {
@@ -233,6 +234,7 @@ export default function SummerlinWestHomes() {
       {activeSection === 'home-valuation' && <HomeValuationSection />}
       {activeSection === 'sell-your-home' && <SellYourHomeSection />}
       {activeSection === 'mortgage-calculator' && <MortgageCalculatorSection />}
+      {activeSection === 'buying-guide' && <BuyingGuideSection />}
 
       {showContactModal && (
         <ContactModal onClose={() => setShowContactModal(false)} />
@@ -275,6 +277,7 @@ function Header({
     { id: 'home-valuation', label: 'Home Value' },
     { id: 'sell-your-home', label: 'Sell Your Home' },
     { id: 'mortgage-calculator', label: 'Mortgage Calculator' },
+    { id: 'buying-guide', label: 'Buying Guide' },
     { id: 'about', label: 'About' },
   ];
 
@@ -491,7 +494,9 @@ function RealScoutSearchEmbed() {
     <section className="bg-gray-50 py-16">
       <div className="container mx-auto px-4">
         <div className="mb-8 text-center">
-          <h2 className="mb-4 text-3xl font-bold">Find Your Dream Home in Summerlin West</h2>
+          <h2 className="mb-4 text-3xl font-bold">
+            Find Your Dream Home in Summerlin West
+          </h2>
           <p className="mx-auto max-w-2xl text-gray-600">
             Browse our current listings powered by RealScout with real-time MLS
             data
@@ -530,7 +535,9 @@ function FeaturedProperties({
       <div className="container mx-auto px-4">
         <div className="mb-12 flex items-center justify-between">
           <div>
-            <h2 className="text-3xl font-bold">Featured Luxury Properties in Summerlin West</h2>
+            <h2 className="text-3xl font-bold">
+              Featured Luxury Properties in Summerlin West
+            </h2>
             <p className="mt-2 text-gray-600">
               Hand-picked luxury homes available now
             </p>
@@ -665,7 +672,9 @@ function CommunitiesPreview({
     <section className="bg-gray-50 py-16">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
-          <h2 className="mb-4 text-3xl font-bold">Explore Summerlin West Communities</h2>
+          <h2 className="mb-4 text-3xl font-bold">
+            Explore Summerlin West Communities
+          </h2>
           <p className="mx-auto max-w-2xl text-gray-600">
             Each community offers unique amenities and lifestyle options
           </p>
@@ -1018,7 +1027,9 @@ function AboutSection() {
       <section className="bg-gray-50 py-16">
         <div className="container mx-auto px-4">
           <div className="mb-8 text-center">
-            <h3 className="mb-4 text-3xl font-bold">Featured Properties in Summerlin West</h3>
+            <h3 className="mb-4 text-3xl font-bold">
+              Featured Properties in Summerlin West
+            </h3>
             <p className="mx-auto max-w-2xl text-gray-600">
               Explore our current listings and discover why Summerlin West is
               the premier choice for luxury real estate
@@ -1252,6 +1263,11 @@ function SellYourHomeSection() {
 // Mortgage Calculator Section Component
 function MortgageCalculatorSection() {
   return <MortgageCalculatorPage />;
+}
+
+// Buying Guide Section Component
+function BuyingGuideSection() {
+  return <BuyingGuidePage />;
 }
 
 // Contact Modal Component
