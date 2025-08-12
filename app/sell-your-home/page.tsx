@@ -160,6 +160,39 @@ export default function SellYourHomePage() {
               />
             </div>
           </div>
+          
+          {/* RealScout Simple Search Widget */}
+          <div className="mt-12 text-center">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">
+              Quick Property Search
+            </h3>
+            <p className="text-lg text-gray-600 mb-8">
+              Start your search with our simple and intuitive search tool
+            </p>
+            <div className="flex justify-center">
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: '<realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>'
+                }}
+              />
+            </div>
+            
+            {/* Placeholder Buttons */}
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
+              <button className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                Search by Price Range
+              </button>
+              <button className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
+                Search by Bedrooms
+              </button>
+              <button className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors">
+                Search by Location
+              </button>
+              <button className="px-6 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors">
+                Search by Property Type
+              </button>
+            </div>
+          </div>
         </div>
 
         <div className="mx-auto max-w-7xl">

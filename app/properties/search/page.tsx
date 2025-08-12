@@ -472,41 +472,78 @@ export default function PropertySearchPage() {
       </section>
 
       {/* RealScout Home Value Widget Section */}
-      <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-100">
+      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="mx-auto mb-12 max-w-4xl text-center">
+            <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
               Check Home Values in Summerlin West
             </h2>
-            <p className="text-lg text-gray-600 mb-8">
-              Get instant property value estimates while you search for your dream home
+            <p className="mb-8 text-lg text-gray-600">
+              Get instant property value estimates while you search for your
+              dream home
             </p>
           </div>
-          
+
           {/* RealScout Home Value Widget */}
-          <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-6">
+          <div className="mx-auto max-w-2xl rounded-lg bg-white p-6 shadow-lg">
             <div
               dangerouslySetInnerHTML={{
-                __html: '<realscout-home-value agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-home-value>'
+                __html:
+                  '<realscout-home-value agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-home-value>',
               }}
             />
           </div>
         </div>
-        
+
         {/* RealScout Advanced Search Widget */}
         <div className="mt-12 text-center">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6">
+          <h3 className="mb-6 text-2xl font-bold text-gray-900">
             Advanced Property Search
           </h3>
-          <p className="text-lg text-gray-600 mb-8">
+          <p className="mb-8 text-lg text-gray-600">
             Use our powerful search tools alongside the basic search above
           </p>
           <div className="flex justify-center">
             <div
               dangerouslySetInnerHTML={{
-                __html: '<realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>'
+                __html:
+                  '<realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>',
               }}
             />
+          </div>
+        </div>
+        
+        {/* RealScout Simple Search Widget */}
+        <div className="mt-12 text-center">
+          <h3 className="mb-6 text-2xl font-bold text-gray-900">
+            Quick Property Search
+          </h3>
+          <p className="mb-8 text-lg text-gray-600">
+            Start your search with our simple and intuitive search tool
+          </p>
+          <div className="flex justify-center">
+            <div
+              dangerouslySetInnerHTML={{
+                __html:
+                  '<realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>',
+              }}
+            />
+          </div>
+          
+          {/* Placeholder Buttons */}
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <button className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+              Search by Price Range
+            </button>
+            <button className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
+              Search by Bedrooms
+            </button>
+            <button className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors">
+              Search by Location
+            </button>
+            <button className="px-6 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors">
+              Search by Property Type
+            </button>
           </div>
         </div>
       </section>
