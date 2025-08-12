@@ -486,16 +486,14 @@ function RealScoutSearchEmbed() {
 
         <div className="mx-auto max-w-6xl rounded-xl bg-white p-8 shadow-xl">
           {/* @ts-ignore - RealScout custom web component */}
-          <realscout-office-listings
-            agent-encoded-id="QWdlbnQtMjI1MDUw"
-            sort-order="STATUS_AND_SIGNIFICANT_CHANGE"
-            listing-status="For Sale"
-            page-size="30"
-            hide-search="false"
-            hide-listing-date="false"
-            hide-listing-type="false"
-            hide-map="false"
-          />
+          <realscout-office-listings 
+            agent-encoded-id="QWdlbnQtMjI1MDUw" 
+            sort-order="STATUS_AND_SIGNIFICANT_CHANGE" 
+            listing-status="For Sale" 
+            property-types="SFR,MF" 
+            price-min="600000" 
+            price-max="750000"
+          ></realscout-office-listings>
         </div>
       </div>
     </section>

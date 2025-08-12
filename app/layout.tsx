@@ -99,7 +99,8 @@ export default function RootLayout({
       >
         {/* RealScout Widget Script */}
         <Script
-          src="https://cdn.realscout.com/assets/office-listings-widget.js"
+          src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
+          type="module"
           strategy="afterInteractive"
         />
         {children}
