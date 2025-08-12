@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -90,18 +89,13 @@ export default function RootLayout({
             width: 100%;
           }
         `}</style>
+        {/* Add RealScout widget script */}
+        <script src="https://em.realscout.com/widgets/realscout-web-components.umd.js" type="module"></script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-gray-900`}
       >
         {children}
-        
-        {/* Add RealScout widget script before closing body */}
-        <Script 
-          src="https://em.realscout.com/widgets/realscout-web-components.umd.js" 
-          type="module"
-          strategy="beforeInteractive"
-        />
       </body>
     </html>
   );

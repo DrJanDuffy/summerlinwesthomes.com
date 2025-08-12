@@ -5,7 +5,6 @@ import { ChevronRight, Home, Search, Phone, Mail, MapPin, Bed, Bath, Square, Hea
 import { cn } from '@/lib/utils';
 import { formatPrice, formatSquareFeet } from '@/lib/utils';
 import type { Property, Agent } from '@/types/real-estate';
-import { RealScoutOfficeListings, RealScoutPropertySearch } from '@/components/RealScoutWidgets';
 
 // Main App Component - Summerlin West Homes
 export default function SummerlinWestHomes() {
@@ -971,22 +970,17 @@ function ListingsSection() {
           </div>
           
           {/* RealScout Office Listings Widget */}
-          <RealScoutOfficeListings 
-            agent-encoded-id={agentId}
-            sort-order="STATUS_AND_SIGNIFICANT_CHANGE"
-            listing-status="For Sale"
-            property-types="SFR,MF,TH"
-            price-min="600000"
-            price-max="7500000"
-            beds-min="2"
-            baths-min="2"
-            sqft-min="1500"
-            sort-by="PRICE_DESC"
-            limit="20"
-            show-filters={showFilters.toString()}
-            show-sort={showSort.toString()}
-            show-pagination={showPagination.toString()}
-            theme="light"
+          <div 
+            dangerouslySetInnerHTML={{
+              __html: `<realscout-office-listings 
+                agent-encoded-id="${agentId}"
+                sort-order="STATUS_AND_SIGNIFICANT_CHANGE"
+                listing-status="For Sale"
+                property-types="SFR,MF"
+                price-min="600000"
+                price-max="750000"
+              ></realscout-office-listings>`
+            }}
           />
         </div>
 
@@ -998,12 +992,16 @@ function ListingsSection() {
               <Filter className="inline-block w-5 h-5 mr-2 text-amber-600" />
               Advanced Property Search
             </h4>
-            <RealScoutPropertySearch 
-              agent-encoded-id={agentId}
-              show-filters="true"
-              show-sort="true"
-              theme="light"
-              placeholder="Search Summerlin West properties..."
+            <div 
+              dangerouslySetInnerHTML={{
+                __html: `<realscout-property-search 
+                  agent-encoded-id="${agentId}"
+                  show-filters="true"
+                  show-sort="true"
+                  theme="light"
+                  placeholder="Search Summerlin West properties..."
+                ></realscout-property-search>`
+              }}
             />
           </div>
 
