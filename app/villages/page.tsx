@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Map, Home, Golf, Mountain, Shield, Users, Star, TrendingUp } from 'lucide-react';
+import { Map, Home, Mountain, Shield, Users, Star, TrendingUp } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export default function VillagesPage() {
