@@ -98,9 +98,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} bg-white text-gray-900 antialiased`}
       >
         {/* RealScout Widget Script */}
-        <Script 
-          src="https://em.realscout.com/widgets/realscout-web-components.umd.js" 
-          type="module"
+        <Script
+          src="https://cdn.realscout.com/assets/office-listings-widget.js"
           strategy="afterInteractive"
         />
         {children}
