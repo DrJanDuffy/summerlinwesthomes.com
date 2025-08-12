@@ -28,6 +28,8 @@ import {
   EyeOff,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { ProgressiveOnboarding } from '@/components/ProgressiveOnboarding';
+import { OnboardingProvider, useOnboarding } from '@/components/OnboardingContext';
 import { formatPrice, formatSquareFeet } from '@/lib/utils';
 import type { Property, Agent } from '@/types/real-estate';
 
@@ -204,44 +206,46 @@ export default function SummerlinWestHomes() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Header
-        activeSection={activeSection}
-        setActiveSection={setActiveSection}
-        isMobileMenuOpen={isMobileMenuOpen}
-        setIsMobileMenuOpen={setIsMobileMenuOpen}
-      />
-
-      {activeSection === 'home' && (
-        <HomePage
+    <OnboardingProvider>
+      <div className="min-h-screen bg-gray-50">
+        <Header
+          activeSection={activeSection}
           setActiveSection={setActiveSection}
-          featuredProperties={featuredProperties}
-          toggleSaved={toggleSaved}
-          savedProperties={savedProperties}
+          isMobileMenuOpen={isMobileMenuOpen}
+          setIsMobileMenuOpen={setIsMobileMenuOpen}
         />
-      )}
-      {activeSection === 'properties' && (
-        <PropertiesSection
-          savedProperties={savedProperties}
-          setSavedProperties={setSavedProperties}
-          toggleSaved={toggleSaved}
-        />
-      )}
-      {activeSection === 'listings' && <ListingsSection />}
-      {activeSection === 'villages' && <VillagesSection />}
-      {activeSection === 'market-data' && <MarketDataSection />}
-      {activeSection === 'about' && <AboutSection />}
-      {activeSection === 'home-valuation' && <HomeValuationSection />}
-      {activeSection === 'sell-your-home' && <SellYourHomeSection />}
-      {activeSection === 'mortgage-calculator' && <MortgageCalculatorSection />}
-      {activeSection === 'buying-guide' && <BuyingGuideSection />}
 
-      {showContactModal && (
-        <ContactModal onClose={() => setShowContactModal(false)} />
-      )}
+        {activeSection === 'home' && (
+          <HomePage
+            setActiveSection={setActiveSection}
+            featuredProperties={featuredProperties}
+            toggleSaved={toggleSaved}
+            savedProperties={savedProperties}
+          />
+        )}
+        {activeSection === 'properties' && (
+          <PropertiesSection
+            savedProperties={savedProperties}
+            setSavedProperties={setSavedProperties}
+            toggleSaved={toggleSaved}
+          />
+        )}
+        {activeSection === 'listings' && <ListingsSection />}
+        {activeSection === 'villages' && <VillagesSection />}
+        {activeSection === 'market-data' && <MarketDataSection />}
+        {activeSection === 'about' && <AboutSection />}
+        {activeSection === 'home-valuation' && <HomeValuationSection />}
+        {activeSection === 'sell-your-home' && <SellYourHomeSection />}
+        {activeSection === 'mortgage-calculator' && <MortgageCalculatorSection />}
+        {activeSection === 'buying-guide' && <BuyingGuideSection />}
 
-      <Footer />
-    </div>
+        {showContactModal && (
+          <ContactModal onClose={() => setShowContactModal(false)} />
+        )}
+
+        <Footer />
+      </div>
+    </OnboardingProvider>
   );
 }
 
@@ -395,11 +399,12 @@ function HomePage({
   toggleSaved: (id: string) => void;
   savedProperties: string[];
 }) {
-  return (
-    <>
-      <HeroSection />
-      <StatsBar />
-      <HomeValueWidget />
+      return (
+      <>
+        <HeroSection />
+        <ProgressiveOnboarding />
+        <StatsBar />
+        <HomeValueWidget />
       <AdvancedSearchWidget />
       <SimpleSearchWidget />
       <RealScoutSearchEmbed />
@@ -416,50 +421,52 @@ function HomePage({
   );
 }
 
-// Hero Section with Enhanced Visual Appeal
-function HeroSection() {
-  return (
-    <section className="relative flex h-screen items-center justify-center">
-      {/* Background with gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-amber-600 via-orange-500 to-red-500 opacity-90"></div>
-      <div className="absolute inset-0 bg-black opacity-20"></div>
+  // Hero Section with Enhanced Visual Appeal
+  function HeroSection() {
+    const { openModal } = useOnboarding();
+    
+    return (
+      <section className="relative flex h-screen items-center justify-center">
+        {/* Background with gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-600 via-orange-500 to-red-500 opacity-90"></div>
+        <div className="absolute inset-0 bg-black opacity-20"></div>
 
-      {/* Hero Content */}
-      <div className="relative z-10 mx-auto max-w-5xl px-4 text-center text-white">
-        <div className="mb-6">
-          <span className="rounded-full bg-white/20 px-4 py-2 text-sm font-medium backdrop-blur">
-            Nevada&apos;s #1 Luxury Community
-          </span>
+        {/* Hero Content */}
+        <div className="relative z-10 mx-auto max-w-5xl px-4 text-center text-white">
+          <div className="mb-6">
+            <span className="rounded-full bg-white/20 px-4 py-2 text-sm font-medium backdrop-blur">
+              Nevada&apos;s #1 Luxury Community
+            </span>
+          </div>
+          <h1 className="mb-6 text-5xl font-bold leading-tight md:text-7xl">
+            Welcome to <br />
+            Summerlin West
+          </h1>
+          <p className="mx-auto mb-10 max-w-3xl text-xl text-white/90 md:text-2xl">
+            Discover exceptional luxury homes in Las Vegas&apos; most prestigious
+            master-planned community
+          </p>
+          <div className="flex flex-col justify-center gap-4 sm:flex-row">
+            <button
+              onClick={openModal}
+              className="flex transform items-center justify-center space-x-2 rounded-lg bg-white px-8 py-4 font-semibold text-amber-600 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-2xl"
+            >
+              <Search className="h-5 w-5" />
+                          <span>Find My Dream Home in 60 Seconds</span>
+            </button>
+            <button className="rounded-lg border-2 border-white px-8 py-4 font-semibold text-white transition-all duration-200 hover:bg-white hover:text-amber-600">
+              Download Community Guide
+            </button>
+          </div>
         </div>
-        <h1 className="mb-6 text-5xl font-bold leading-tight md:text-7xl">
-          Welcome to <br />
-          Summerlin West
-        </h1>
-        <p className="mx-auto mb-10 max-w-3xl text-xl text-white/90 md:text-2xl">
-          Discover exceptional luxury homes in Las Vegas&apos; most prestigious
-          master-planned community
-        </p>
-        <div className="flex flex-col justify-center gap-4 sm:flex-row">
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="flex transform items-center justify-center space-x-2 rounded-lg bg-white px-8 py-4 font-semibold text-amber-600 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-2xl"
-          >
-            <Search className="h-5 w-5" />
-            <span>Browse Properties</span>
-          </button>
-          <button className="rounded-lg border-2 border-white px-8 py-4 font-semibold text-white transition-all duration-200 hover:bg-white hover:text-amber-600">
-            Download Community Guide
-          </button>
-        </div>
-      </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 transform animate-bounce">
-        <ChevronRight className="h-8 w-8 rotate-90 text-white" />
-      </div>
-    </section>
-  );
-}
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 transform animate-bounce">
+          <ChevronRight className="h-8 w-8 rotate-90 text-white" />
+        </div>
+      </section>
+    );
+  }
 
 // Enhanced Stats Bar with Real Data
 function StatsBar() {
