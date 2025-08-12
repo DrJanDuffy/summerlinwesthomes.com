@@ -109,7 +109,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <head>
+            <head>
+        {/* Fonts are preloaded for performance */}
+        <link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/>
+        
+        {/* RealScout script loads with afterInteractive strategy */}
+        <link rel="preload" href="https://em.realscout.com/widgets/realscout-web-components.umd.js" as="script"/>
+        
         {/* RealScout Widget Styles */}
         <style>{`
           realscout-office-listings {
@@ -135,9 +141,9 @@ export default function RootLayout({
                 addressLocality: 'Las Vegas',
                 addressRegion: 'NV',
                 postalCode: '89135',
-                addressCountry: 'US'
-              }
-            })
+                addressCountry: 'US',
+              },
+            }),
           }}
         />
       </head>
