@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import Script from 'next/script';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
 
 const geistSans = Geist({
@@ -109,13 +111,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-            <head>
+      <head>
         {/* Fonts are preloaded for performance */}
-        <link rel="preload" href="/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/>
-        
+        <link
+          rel="preload"
+          href="/_next/static/media/569ce4b8f30dc480-s.p.woff2"
+          as="font"
+          crossorigin=""
+          type="font/woff2"
+        />
+
         {/* RealScout script loads with afterInteractive strategy */}
-        <link rel="preload" href="https://em.realscout.com/widgets/realscout-web-components.umd.js" as="script"/>
-        
+        <link
+          rel="preload"
+          href="https://em.realscout.com/widgets/realscout-web-components.umd.js"
+          as="script"
+        />
+
         {/* RealScout Widget Styles */}
         <style>{`
           realscout-office-listings {
@@ -123,7 +135,7 @@ export default function RootLayout({
             width: 100%;
           }
         `}</style>
-        
+
         {/* Structured Data for SEO */}
         <script
           type="application/ld+json"
@@ -157,6 +169,10 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
         {children}
+
+        {/* Vercel Analytics and Performance Monitoring */}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
