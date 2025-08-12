@@ -5,12 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: [
-        '/api/',
-        '/_next/',
-        '/admin/',
-        '/private/',
-      ],
+      disallow: ['/api/', '/_next/', '/admin/', '/private/'],
     },
     sitemap: 'https://summerlinwesthomes.com/sitemap.xml',
     host: 'https://summerlinwesthomes.com',
