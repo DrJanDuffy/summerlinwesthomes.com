@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Calculator, Home, TrendingUp, MapPin, Phone, Mail } from 'lucide-react';
+import { Calculator, Home, TrendingUp, MapPin, Phone, Mail, Users } from 'lucide-react';
 
 export default function HomeValuationPage() {
   const [formData, setFormData] = useState({
@@ -28,200 +28,204 @@ export default function HomeValuationPage() {
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-24">
-      <div className="container mx-auto px-4 py-12">
-        {/* Hero Section */}
-        <div className="text-center mb-12">
-          <div className="mb-6 flex justify-center">
-            <div className="rounded-full bg-amber-100 p-4">
-              <Calculator className="h-12 w-12 text-amber-600" />
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+      {/* Hero Section */}
+      <div className="bg-gradient-to-r from-blue-900 to-indigo-800 text-white py-20">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            Get Your Home&apos;s True Market Value
+          </h1>
+          <p className="text-xl md:text-2xl text-blue-100 mb-8">
+            Professional home valuation for Summerlin West properties
+          </p>
+          <div className="flex flex-wrap justify-center gap-4 text-sm">
+            <div className="flex items-center gap-2">
+              <Calculator className="w-5 h-5" />
+              <span>Instant Estimates</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <TrendingUp className="w-5 h-5" />
+              <span>Market Analysis</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <MapPin className="w-5 h-5" />
+              <span>Local Expertise</span>
             </div>
           </div>
-          <h1 className="mb-4 text-4xl font-bold text-gray-900 md:text-5xl">
-            Get Your Home&apos;s Current Market Value
-          </h1>
-          <p className="mx-auto max-w-3xl text-xl text-gray-600">
-            Discover what your Summerlin West property is worth in today&apos;s market. 
-            Get a professional, data-driven valuation from our local real estate experts.
-          </p>
         </div>
+      </div>
 
-        <div className="mx-auto max-w-6xl">
-          <div className="grid gap-8 lg:grid-cols-2">
-            {/* Valuation Form */}
-            <div className="rounded-xl bg-white p-8 shadow-xl">
-              <h2 className="mb-6 text-2xl font-bold text-gray-900">
-                Free Home Valuation Request
+      {/* RealScout Home Value Widget Section */}
+      <div className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Instant Home Value Estimate
+            </h2>
+            <p className="text-lg text-gray-600 mb-8">
+              Get an accurate, data-driven estimate of your home&apos;s current market value using our advanced RealScout technology
+            </p>
+          </div>
+          
+          {/* RealScout Home Value Widget */}
+          <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-6">
+            <div
+              dangerouslySetInnerHTML={{
+                __html: '<realscout-home-value agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-home-value>'
+              }}
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Manual Valuation Form Section */}
+      <div className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Need a Detailed Professional Valuation?
               </h2>
-              
+              <p className="text-lg text-gray-600">
+                Fill out the form below for a comprehensive market analysis and personalized consultation
+              </p>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-lg p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Property Information */}
-                <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-gray-800">Property Details</h3>
-                  
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="address" className="block text-sm font-medium text-gray-700 mb-2">
-                      Street Address *
+                      Property Address *
                     </label>
                     <input
                       type="text"
                       id="address"
                       name="address"
-                      required
                       value={formData.address}
                       onChange={handleChange}
-                      className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200"
-                      placeholder="12345 Luxury Lane"
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="123 Luxury Lane"
                     />
                   </div>
-
-                  <div className="grid grid-cols-3 gap-4">
-                    <div>
-                      <label htmlFor="city" className="block text-sm font-medium text-gray-700 mb-2">
-                        City
-                      </label>
-                      <input
-                        type="text"
-                        id="city"
-                        name="city"
-                        value={formData.city}
-                        onChange={handleChange}
-                        className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200"
-                        readOnly
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="state" className="block text-sm font-medium text-gray-700 mb-2">
-                        State
-                      </label>
-                      <input
-                        type="text"
-                        id="state"
-                        name="state"
-                        value={formData.state}
-                        onChange={handleChange}
-                        className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200"
-                        readOnly
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="zipCode" className="block text-sm font-medium text-gray-700 mb-2">
-                        ZIP Code *
-                      </label>
-                      <input
-                        type="text"
-                        id="zipCode"
-                        name="zipCode"
-                        required
-                        value={formData.zipCode}
-                        onChange={handleChange}
-                        className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200"
-                        placeholder="89135"
-                      />
-                    </div>
+                  
+                  <div>
+                    <label htmlFor="zipCode" className="block text-sm font-medium text-gray-700 mb-2">
+                      ZIP Code *
+                    </label>
+                    <input
+                      type="text"
+                      id="zipCode"
+                      name="zipCode"
+                      value={formData.zipCode}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="89135"
+                    />
                   </div>
+                </div>
 
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="propertyType" className="block text-sm font-medium text-gray-700 mb-2">
-                        Property Type
-                      </label>
-                      <select
-                        id="propertyType"
-                        name="propertyType"
-                        value={formData.propertyType}
-                        onChange={handleChange}
-                        className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200"
-                      >
-                        <option value="single-family">Single Family Home</option>
-                        <option value="townhouse">Townhouse</option>
-                        <option value="condo">Condominium</option>
-                        <option value="luxury">Luxury Estate</option>
-                      </select>
-                    </div>
-                    <div>
-                      <label htmlFor="yearBuilt" className="block text-sm font-medium text-gray-700 mb-2">
-                        Year Built
-                      </label>
-                      <input
-                        type="number"
-                        id="yearBuilt"
-                        name="yearBuilt"
-                        value={formData.yearBuilt}
-                        onChange={handleChange}
-                        className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200"
-                        placeholder="2020"
-                        min="1900"
-                        max={new Date().getFullYear()}
-                      />
-                    </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div>
+                    <label htmlFor="propertyType" className="block text-sm font-medium text-gray-700 mb-2">
+                      Property Type
+                    </label>
+                    <select
+                      id="propertyType"
+                      name="propertyType"
+                      value={formData.propertyType}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    >
+                      <option value="single-family">Single Family</option>
+                      <option value="condo">Condo</option>
+                      <option value="townhouse">Townhouse</option>
+                      <option value="luxury">Luxury Home</option>
+                    </select>
                   </div>
+                  
+                  <div>
+                    <label htmlFor="bedrooms" className="block text-sm font-medium text-gray-700 mb-2">
+                      Bedrooms
+                    </label>
+                    <input
+                      type="number"
+                      id="bedrooms"
+                      name="bedrooms"
+                      value={formData.bedrooms}
+                      onChange={handleChange}
+                      min="1"
+                      max="10"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="4"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="bathrooms" className="block text-sm font-medium text-gray-700 mb-2">
+                      Bathrooms
+                    </label>
+                    <input
+                      type="number"
+                      id="bathrooms"
+                      name="bathrooms"
+                      value={formData.bathrooms}
+                      onChange={handleChange}
+                      min="1"
+                      max="10"
+                      step="0.5"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="3.5"
+                    />
+                  </div>
+                </div>
 
-                  <div className="grid grid-cols-3 gap-4">
-                    <div>
-                      <label htmlFor="bedrooms" className="block text-sm font-medium text-gray-700 mb-2">
-                        Bedrooms
-                      </label>
-                      <input
-                        type="number"
-                        id="bedrooms"
-                        name="bedrooms"
-                        value={formData.bedrooms}
-                        onChange={handleChange}
-                        className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200"
-                        placeholder="4"
-                        min="1"
-                        max="10"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="bathrooms" className="block text-sm font-medium text-gray-700 mb-2">
-                        Bathrooms
-                      </label>
-                      <input
-                        type="number"
-                        id="bathrooms"
-                        name="bathrooms"
-                        value={formData.bathrooms}
-                        onChange={handleChange}
-                        className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200"
-                        placeholder="3"
-                        min="1"
-                        max="10"
-                        step="0.5"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="squareFeet" className="block text-sm font-medium text-gray-700 mb-2">
-                        Square Feet
-                      </label>
-                      <input
-                        type="number"
-                        id="squareFeet"
-                        name="squareFeet"
-                        value={formData.squareFeet}
-                        onChange={handleChange}
-                        className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200"
-                        placeholder="2500"
-                        min="500"
-                        max="20000"
-                      />
-                    </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="squareFeet" className="block text-sm font-medium text-gray-700 mb-2">
+                      Square Feet
+                    </label>
+                    <input
+                      type="number"
+                      id="squareFeet"
+                      name="squareFeet"
+                      value={formData.squareFeet}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="3,200"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="yearBuilt" className="block text-sm font-medium text-gray-700 mb-2">
+                      Year Built
+                    </label>
+                    <input
+                      type="number"
+                      id="yearBuilt"
+                      name="yearBuilt"
+                      value={formData.yearBuilt}
+                      onChange={handleChange}
+                      min="1900"
+                      max={new Date().getFullYear()}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="2020"
+                    />
                   </div>
                 </div>
 
                 {/* Contact Information */}
-                <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-gray-800">Contact Information</h3>
-                  
-                  <div className="grid grid-cols-2 gap-4">
+                <div className="border-t pt-6">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Contact Information</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                         Full Name *
@@ -230,188 +234,175 @@ export default function HomeValuationPage() {
                         type="text"
                         id="name"
                         name="name"
-                        required
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200"
-                        placeholder="John Doe"
+                        required
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        placeholder="John Smith"
                       />
                     </div>
+                    
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                        Phone Number *
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                        Email Address *
                       </label>
                       <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        required
-                        value={formData.phone}
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
                         onChange={handleChange}
-                        className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200"
-                        placeholder="(702) 555-0100"
+                        required
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        placeholder="john@example.com"
                       />
                     </div>
                   </div>
-
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                      Email Address *
+                  
+                  <div className="mt-6">
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                      Phone Number
                     </label>
                     <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      required
-                      value={formData.email}
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
                       onChange={handleChange}
-                      className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200"
-                      placeholder="john.doe@email.com"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="(702) 555-0123"
                     />
                   </div>
+                </div>
 
-                  <div>
-                    <label htmlFor="timeline" className="block text-sm font-medium text-gray-700 mb-2">
-                      When are you planning to sell?
-                    </label>
-                    <select
-                      id="timeline"
-                      name="timeline"
-                      value={formData.timeline}
-                      onChange={handleChange}
-                      className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200"
-                    >
-                      <option value="immediately">Immediately</option>
-                      <option value="within-3-months">Within 3 months</option>
-                      <option value="within-6-months">Within 6 months</option>
-                      <option value="within-year">Within 1 year</option>
-                      <option value="just-curious">Just curious</option>
-                    </select>
+                {/* Additional Information */}
+                <div className="border-t pt-6">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Additional Information</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="timeline" className="block text-sm font-medium text-gray-700 mb-2">
+                        Timeline to Sell
+                      </label>
+                      <select
+                        id="timeline"
+                        name="timeline"
+                        value={formData.timeline}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      >
+                        <option value="within-6-months">Within 6 months</option>
+                        <option value="6-12-months">6-12 months</option>
+                        <option value="1-2-years">1-2 years</option>
+                        <option value="just-curious">Just curious</option>
+                      </select>
+                    </div>
                   </div>
-
-                  <div>
+                  
+                  <div className="mt-6">
                     <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                      Additional Details (Optional)
+                      Additional Details
                     </label>
                     <textarea
                       id="message"
                       name="message"
-                      rows={4}
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200"
-                      placeholder="Tell us about any special features, recent upgrades, or specific questions..."
+                      rows={4}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="Tell us about your property, any special features, or specific questions you have..."
                     />
                   </div>
                 </div>
 
-                <button
-                  type="submit"
-                  className="w-full rounded-lg bg-amber-600 px-6 py-4 text-lg font-semibold text-white transition-colors hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
-                >
-                  Get My Free Home Valuation
-                </button>
-
-                <p className="text-center text-sm text-gray-500">
-                  By submitting this form, you agree to receive communications from Summerlin West Homes. 
-                  We respect your privacy and will never share your information.
-                </p>
+                <div className="border-t pt-6">
+                  <button
+                    type="submit"
+                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold py-4 px-8 rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 transform hover:scale-105 shadow-lg"
+                  >
+                    Get Professional Valuation
+                  </button>
+                  <p className="text-sm text-gray-500 text-center mt-4">
+                    By submitting this form, you agree to receive communications from Summerlin West Homes
+                  </p>
+                </div>
               </form>
             </div>
+          </div>
+        </div>
+      </div>
 
-            {/* Benefits & Information */}
-            <div className="space-y-8">
-              {/* Why Choose Us */}
-              <div className="rounded-xl bg-white p-8 shadow-xl">
-                <h3 className="mb-6 text-2xl font-bold text-gray-900">
-                  Why Choose Our Valuation Service?
-                </h3>
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-3">
-                    <div className="rounded-full bg-amber-100 p-2">
-                      <TrendingUp className="h-5 w-5 text-amber-600" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900">Market Data Driven</h4>
-                      <p className="text-sm text-gray-600">
-                        Our valuations are based on real-time MLS data and recent sales in Summerlin West
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="rounded-full bg-amber-100 p-2">
-                      <MapPin className="h-5 w-5 text-amber-600" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900">Local Expertise</h4>
-                      <p className="text-sm text-gray-600">
-                        Specialized knowledge of Summerlin West neighborhoods and market trends
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="rounded-full bg-amber-100 p-2">
-                      <Home className="h-5 w-5 text-amber-600" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900">Comprehensive Analysis</h4>
-                      <p className="text-sm text-gray-600">
-                        We consider location, amenities, upgrades, and market conditions
-                      </p>
-                    </div>
-                  </div>
+      {/* Why Choose Us Section */}
+      <div className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Why Choose Summerlin West Homes for Your Valuation?
+              </h2>
+              <p className="text-lg text-gray-600">
+                Expert local knowledge combined with cutting-edge technology for accurate market insights
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <TrendingUp className="w-8 h-8 text-blue-600" />
                 </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Market Expertise</h3>
+                <p className="text-gray-600">
+                  Deep understanding of Summerlin West market trends and property values
+                </p>
               </div>
-
-              {/* What You&apos;ll Receive */}
-              <div className="rounded-xl bg-white p-8 shadow-xl">
-                <h3 className="mb-6 text-2xl font-bold text-gray-900">
-                  What You&apos;ll Receive
-                </h3>
-                <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-center space-x-2">
-                    <div className="h-2 w-2 rounded-full bg-amber-600"></div>
-                    <span>Detailed market analysis report</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="h-2 w-2 rounded-full bg-amber-600"></div>
-                    <span>Comparable property sales data</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="h-2 w-2 rounded-full bg-amber-600"></div>
-                    <span>Recommended listing price range</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="h-2 w-2 rounded-full bg-amber-600"></div>
-                    <span>Market timing recommendations</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="h-2 w-2 rounded-full bg-amber-600"></div>
-                    <span>Personal consultation with our experts</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Contact Information */}
-              <div className="rounded-xl bg-amber-50 p-8">
-                <h3 className="mb-4 text-xl font-bold text-gray-900">
-                  Questions? Contact Us Directly
-                </h3>
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-3">
-                    <Phone className="h-5 w-5 text-amber-600" />
-                    <span className="text-gray-700">(702) 555-0100</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Mail className="h-5 w-5 text-amber-600" />
-                    <span className="text-gray-700">info@summerlinwesthomes.com</span>
-                  </div>
+              
+              <div className="text-center">
+                <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Calculator className="w-8 h-8 text-green-600" />
                 </div>
-                <p className="mt-4 text-sm text-gray-600">
-                  Our team is available to answer your questions and provide personalized guidance.
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Advanced Analytics</h3>
+                <p className="text-gray-600">
+                  Data-driven insights using the latest real estate technology and market data
+                </p>
+              </div>
+              
+              <div className="text-center">
+                <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Users className="w-8 h-8 text-purple-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Personalized Service</h3>
+                <p className="text-gray-600">
+                  One-on-one consultation and ongoing support throughout your selling journey
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* CTA Section */}
+      <div className="py-16 bg-gradient-to-r from-blue-900 to-indigo-800 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Discover Your Home&apos;s True Value?
+          </h2>
+          <p className="text-xl text-blue-100 mb-8">
+            Get started with our instant valuation tool above, or contact us for a comprehensive analysis
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a
+              href="tel:+1-702-555-0100"
+              className="bg-white text-blue-900 font-semibold py-3 px-6 rounded-lg hover:bg-blue-50 transition-colors duration-200 flex items-center gap-2"
+            >
+              <Phone className="w-5 h-5" />
+              Call (702) 555-0100
+            </a>
+            <a
+              href="mailto:info@summerlinwesthomes.com"
+              className="border-2 border-white text-white font-semibold py-3 px-6 rounded-lg hover:bg-white hover:text-blue-900 transition-colors duration-200 flex items-center gap-2"
+            >
+              <Mail className="w-5 h-5" />
+              Email Us
+            </a>
           </div>
         </div>
       </div>

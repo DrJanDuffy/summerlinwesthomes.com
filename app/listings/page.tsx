@@ -21,7 +21,26 @@ export default function ListingsPage() {
           </p>
         </div>
 
-
+        {/* RealScout Home Value Widget Section */}
+        <div className="mb-12">
+          <div className="max-w-4xl mx-auto text-center mb-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Check Home Values in Summerlin West
+            </h2>
+            <p className="text-lg text-gray-600 mb-8">
+              Get instant property value estimates while browsing our listings
+            </p>
+          </div>
+          
+          {/* RealScout Home Value Widget */}
+          <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-6">
+            <div
+              dangerouslySetInnerHTML={{
+                __html: '<realscout-home-value agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-home-value>'
+              }}
+            />
+          </div>
+        </div>
 
         {/* RealScout Widget */}
         <div className="rounded-lg bg-white p-6 shadow-lg">

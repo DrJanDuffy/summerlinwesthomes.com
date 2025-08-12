@@ -399,6 +399,7 @@ function HomePage({
     <>
       <HeroSection />
       <StatsBar />
+      <HomeValueWidget />
       <RealScoutSearchEmbed />
       <FeaturedProperties
         properties={featuredProperties}
@@ -482,6 +483,48 @@ function StatsBar() {
               <div className="mt-1 text-sm text-gray-600">{stat.label}</div>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// RealScout Home Value Widget Section
+function HomeValueWidget() {
+  return (
+    <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-16">
+      <div className="container mx-auto px-4">
+        <div className="mx-auto mb-12 max-w-4xl text-center">
+          <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+            Discover Your Home&apos;s Market Value
+          </h2>
+          <p className="mb-8 text-lg text-gray-600">
+            Get an instant, accurate estimate of your Summerlin West property&apos;s
+            current market value
+          </p>
+        </div>
+
+        {/* RealScout Home Value Widget */}
+        <div className="mx-auto max-w-2xl rounded-lg bg-white p-6 shadow-lg">
+          <div
+            dangerouslySetInnerHTML={{
+              __html:
+                '<realscout-home-value agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-home-value>',
+            }}
+          />
+        </div>
+
+        <div className="mt-8 text-center">
+          <p className="mb-4 text-sm text-gray-500">
+            Powered by RealScout&apos;s advanced market analysis technology
+          </p>
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-white transition-colors duration-200 hover:bg-blue-700"
+          >
+            Get Detailed Valuation
+            <ChevronRight className="h-4 w-4" />
+          </button>
         </div>
       </div>
     </section>

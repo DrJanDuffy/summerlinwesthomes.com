@@ -124,6 +124,27 @@ export default function SellYourHomePage() {
           </div>
         </div>
 
+        {/* RealScout Home Value Widget Section */}
+        <div className="mx-auto max-w-4xl mb-16">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Get Your Home&apos;s Current Market Value
+            </h2>
+            <p className="text-lg text-gray-600">
+              Discover what your Summerlin West property is worth before you sell
+            </p>
+          </div>
+          
+          {/* RealScout Home Value Widget */}
+          <div className="bg-white rounded-lg shadow-lg p-6">
+            <div
+              dangerouslySetInnerHTML={{
+                __html: '<realscout-home-value agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-home-value>'
+              }}
+            />
+          </div>
+        </div>
+
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-12 lg:grid-cols-2">
             {/* Main Content */}
