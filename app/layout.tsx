@@ -45,12 +45,43 @@ export const metadata: Metadata = {
     siteName: 'Summerlin West Homes',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: '/images/og-image-summerlin-west-homes.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Summerlin West Homes - Luxury Real Estate in Las Vegas',
+        type: 'image/jpeg',
+      },
+      {
+        url: '/images/og-image-summerlin-west-homes.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Summerlin West Homes - Luxury Real Estate in Las Vegas',
+        type: 'image/webp',
+      },
+    ],
+    countryName: 'United States',
+    emails: ['info@summerlinwesthomes.com'],
+    phoneNumbers: ['+1-702-555-0100'],
+    streetAddress: '123 Luxury Lane',
+    locality: 'Las Vegas',
+    region: 'NV',
+    postalCode: '89135',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Summerlin West Homes | Luxury Real Estate in Las Vegas',
     description:
       'Discover luxury homes and properties in Summerlin West, Las Vegas.',
+    images: [
+      {
+        url: '/images/twitter-image-summerlin-west-homes.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Summerlin West Homes - Luxury Real Estate in Las Vegas',
+      },
+    ],
   },
   robots: {
     index: true,

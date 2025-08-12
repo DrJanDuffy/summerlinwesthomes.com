@@ -509,7 +509,8 @@ export default function MarketDataPage() {
           <div className="mb-8 text-center">
             <h3 className="mb-4 text-3xl font-bold">Current Market Listings</h3>
             <p className="mx-auto max-w-2xl text-gray-600">
-              Explore active properties that reflect current market conditions and pricing trends
+              Explore active properties that reflect current market conditions
+              and pricing trends
             </p>
           </div>
           <div className="mx-auto max-w-6xl rounded-xl bg-white p-8 shadow-xl">

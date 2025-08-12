@@ -1006,7 +1006,8 @@ function AboutSection() {
           <div className="mb-8 text-center">
             <h3 className="mb-4 text-3xl font-bold">Featured Properties</h3>
             <p className="mx-auto max-w-2xl text-gray-600">
-              Explore our current listings and discover why Summerlin West is the premier choice for luxury real estate
+              Explore our current listings and discover why Summerlin West is
+              the premier choice for luxury real estate
             </p>
           </div>
           <div className="mx-auto max-w-6xl rounded-xl bg-white p-8 shadow-xl">

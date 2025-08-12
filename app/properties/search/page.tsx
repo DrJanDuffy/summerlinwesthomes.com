@@ -635,9 +635,12 @@ export default function PropertySearchPage() {
       <section className="bg-gray-50 py-16">
         <div className="container mx-auto px-4">
           <div className="mb-8 text-center">
-            <h3 className="mb-4 text-3xl font-bold">Live MLS Listings in Summerlin West</h3>
+            <h3 className="mb-4 text-3xl font-bold">
+              Live MLS Listings in Summerlin West
+            </h3>
             <p className="mx-auto max-w-2xl text-gray-600">
-              Browse real-time property listings with up-to-date MLS data and advanced search capabilities
+              Browse real-time property listings with up-to-date MLS data and
+              advanced search capabilities
             </p>
           </div>
           <div className="mx-auto max-w-6xl rounded-xl bg-white p-8 shadow-xl">
