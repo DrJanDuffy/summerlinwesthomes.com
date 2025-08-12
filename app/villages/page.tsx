@@ -249,71 +249,111 @@ export default function VillagesPage() {
       </section>
 
       {/* RealScout Home Value Widget Section */}
-      <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-100">
+      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="mx-auto mb-12 max-w-4xl text-center">
+            <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
               Check Home Values Across Summerlin West Villages
             </h2>
-            <p className="text-lg text-gray-600 mb-8">
-              Get instant property value estimates for any village in Summerlin West
+            <p className="mb-8 text-lg text-gray-600">
+              Get instant property value estimates for any village in Summerlin
+              West
             </p>
           </div>
-          
+
           {/* RealScout Home Value Widget */}
-          <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-6">
+          <div className="mx-auto max-w-2xl rounded-lg bg-white p-6 shadow-lg">
             <div
               dangerouslySetInnerHTML={{
-                __html: '<realscout-home-value agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-home-value>'
+                __html:
+                  '<realscout-home-value agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-home-value>',
               }}
             />
           </div>
         </div>
-        
+
         {/* RealScout Advanced Search Widget */}
         <div className="mt-12 text-center">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6">
+          <h3 className="mb-6 text-2xl font-bold text-gray-900">
             Advanced Property Search
           </h3>
-          <p className="text-lg text-gray-600 mb-8">
+          <p className="mb-8 text-lg text-gray-600">
             Search for properties across all Summerlin West villages
           </p>
           <div className="flex justify-center">
             <div
               dangerouslySetInnerHTML={{
-                __html: '<realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>'
+                __html:
+                  '<realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>',
               }}
             />
           </div>
-          
+
           {/* RealScout Simple Search Widget */}
           <div className="mt-12 text-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">
+            <h3 className="mb-6 text-2xl font-bold text-gray-900">
               Quick Property Search
             </h3>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="mb-8 text-lg text-gray-600">
               Start your search with our simple and intuitive search tool
             </p>
             <div className="flex justify-center">
               <div
                 dangerouslySetInnerHTML={{
-                  __html: '<realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>'
+                  __html:
+                    '<realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>',
                 }}
               />
             </div>
-            
-            {/* Placeholder Buttons */}
+
+            {/* Functional Search Buttons */}
             <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <button className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+              <button
+                onClick={() =>
+                  window.open(
+                    'https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy',
+                    '_blank',
+                    'noopener,noreferrer'
+                  )
+                }
+                className="rounded-lg bg-blue-600 px-6 py-3 text-white transition-colors hover:bg-blue-700"
+              >
                 Search by Price Range
               </button>
-              <button className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
+              <button
+                onClick={() =>
+                  window.open(
+                    'https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy',
+                    '_blank',
+                    'noopener,noreferrer'
+                  )
+                }
+                className="rounded-lg bg-green-600 px-6 py-3 text-white transition-colors hover:bg-green-700"
+              >
                 Search by Bedrooms
               </button>
-              <button className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors">
+              <button
+                onClick={() =>
+                  window.open(
+                    'https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy',
+                    '_blank',
+                    'noopener,noreferrer'
+                  )
+                }
+                className="rounded-lg bg-purple-600 px-6 py-3 text-white transition-colors hover:bg-purple-700"
+              >
                 Search by Location
               </button>
-              <button className="px-6 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors">
+              <button
+                onClick={() =>
+                  window.open(
+                    'https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy',
+                    '_blank',
+                    'noopener,noreferrer'
+                  )
+                }
+                className="rounded-lg bg-orange-600 px-6 py-3 text-white transition-colors hover:bg-orange-700"
+              >
                 Search by Property Type
               </button>
             </div>
@@ -325,7 +365,9 @@ export default function VillagesPage() {
       <section className="bg-gray-50 py-16">
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold">Explore Summerlin West Villages & Communities</h2>
+            <h2 className="mb-4 text-3xl font-bold">
+              Explore Summerlin West Villages & Communities
+            </h2>
             <p className="mx-auto max-w-2xl text-gray-600">
               Each village offers unique amenities, lifestyle options, and price
               points to match your preferences

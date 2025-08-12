@@ -586,18 +586,54 @@ function SimpleSearchWidget() {
           />
         </div>
 
-        {/* Placeholder Buttons */}
+        {/* Functional Search Buttons */}
         <div className="mt-8 flex flex-wrap justify-center gap-4">
-          <button className="rounded-lg bg-blue-600 px-6 py-3 text-white transition-colors hover:bg-blue-700">
+          <button
+            onClick={() =>
+              window.open(
+                'https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy',
+                '_blank',
+                'noopener,noreferrer'
+              )
+            }
+            className="rounded-lg bg-blue-600 px-6 py-3 text-white transition-colors hover:bg-blue-700"
+          >
             Search by Price Range
           </button>
-          <button className="rounded-lg bg-green-600 px-6 py-3 text-white transition-colors hover:bg-green-700">
+          <button
+            onClick={() =>
+              window.open(
+                'https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy',
+                '_blank',
+                'noopener,noreferrer'
+              )
+            }
+            className="rounded-lg bg-green-600 px-6 py-3 text-white transition-colors hover:bg-green-700"
+          >
             Search by Bedrooms
           </button>
-          <button className="rounded-lg bg-purple-600 px-6 py-3 text-white transition-colors hover:bg-purple-700">
+          <button
+            onClick={() =>
+              window.open(
+                'https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy',
+                '_blank',
+                'noopener,noreferrer'
+              )
+            }
+            className="rounded-lg bg-purple-600 px-6 py-3 text-white transition-colors hover:bg-purple-700"
+          >
             Search by Location
           </button>
-          <button className="rounded-lg bg-orange-600 px-6 py-3 text-white transition-colors hover:bg-orange-700">
+          <button
+            onClick={() =>
+              window.open(
+                'https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy',
+                '_blank',
+                'noopener,noreferrer'
+              )
+            }
+            className="rounded-lg bg-orange-600 px-6 py-3 text-white transition-colors hover:bg-orange-700"
+          >
             Search by Property Type
           </button>
         </div>
