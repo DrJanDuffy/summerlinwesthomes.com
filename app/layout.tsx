@@ -304,23 +304,23 @@ export default function RootLayout({
                 'Investment Properties',
                 'Las Vegas Luxury Market',
               ],
-                             communities: [
-                 {
-                   '@type': 'Place',
-                   name: 'The Ridges',
-                   description: 'Luxury golf community in Summerlin West',
-                 },
-                 {
-                   '@type': 'Place',
-                   name: 'The Summit',
-                   description: 'Mountain living community',
-                 },
-                 {
-                   '@type': 'Place',
-                   name: 'Red Rock Country Club',
-                   description: 'Private golf club community',
-                 },
-               ],
+              communities: [
+                {
+                  '@type': 'Place',
+                  name: 'The Ridges',
+                  description: 'Luxury golf community in Summerlin West',
+                },
+                {
+                  '@type': 'Place',
+                  name: 'The Summit',
+                  description: 'Mountain living community',
+                },
+                {
+                  '@type': 'Place',
+                  name: 'Red Rock Country Club',
+                  description: 'Private golf club community',
+                },
+              ],
             }),
           }}
         />
