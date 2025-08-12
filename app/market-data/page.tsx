@@ -143,7 +143,7 @@ export default function MarketDataPage() {
       <section className="bg-gradient-to-br from-amber-600 via-orange-500 to-red-500 py-16 text-white">
         <div className="container mx-auto px-4 text-center">
           <h1 className="mb-6 text-4xl font-bold md:text-6xl">
-            Summerlin West Market Data
+            Summerlin West Market Data - Real Estate Trends & Insights
           </h1>
           <p className="mx-auto mb-8 max-w-3xl text-xl md:text-2xl">
             Real-time market insights and trends exclusively for Summerlin West
@@ -341,7 +341,7 @@ export default function MarketDataPage() {
       {/* Recent Sales */}
       <section className="bg-gray-50 py-16">
         <div className="container mx-auto px-4">
-          <h2 className="mb-8 text-center text-3xl font-bold">Recent Sales</h2>
+          <h2 className="mb-8 text-center text-3xl font-bold">Recent Sales in Summerlin West</h2>
           <div className="overflow-hidden rounded-xl bg-white shadow-lg">
             <div className="overflow-x-auto">
               <table className="w-full">
@@ -485,9 +485,9 @@ export default function MarketDataPage() {
       {/* CTA Section */}
       <section className="bg-gradient-to-br from-amber-600 to-orange-600 py-16">
         <div className="container mx-auto px-4 text-center">
-          <h3 className="mb-4 text-3xl font-bold text-white">
-            Need Detailed Market Analysis?
-          </h3>
+          <h2 className="mb-4 text-3xl font-bold text-white">
+            Need Detailed Summerlin West Market Analysis?
+          </h2>
           <p className="mx-auto mb-8 max-w-2xl text-white/90">
             Get personalized market reports for specific villages or property
             types in Summerlin West
@@ -507,7 +507,7 @@ export default function MarketDataPage() {
       <section className="bg-gray-50 py-16">
         <div className="container mx-auto px-4">
           <div className="mb-8 text-center">
-            <h3 className="mb-4 text-3xl font-bold">Current Market Listings</h3>
+            <h3 className="mb-4 text-3xl font-bold">Current Summerlin West Market Listings</h3>
             <p className="mx-auto max-w-2xl text-gray-600">
               Explore active properties that reflect current market conditions
               and pricing trends

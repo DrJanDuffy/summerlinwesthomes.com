@@ -411,10 +411,10 @@ function HeroSection() {
             Nevada&apos;s #1 Luxury Community
           </span>
         </div>
-        <h2 className="mb-6 text-5xl font-bold leading-tight md:text-7xl">
+        <h1 className="mb-6 text-5xl font-bold leading-tight md:text-7xl">
           Welcome to <br />
           Summerlin West
-        </h2>
+        </h1>
         <p className="mx-auto mb-10 max-w-3xl text-xl text-white/90 md:text-2xl">
           Discover exceptional luxury homes in Las Vegas&apos; most prestigious
           master-planned community
@@ -477,7 +477,7 @@ function RealScoutSearchEmbed() {
     <section className="bg-gray-50 py-16">
       <div className="container mx-auto px-4">
         <div className="mb-8 text-center">
-          <h3 className="mb-4 text-3xl font-bold">Find Your Dream Home</h3>
+          <h2 className="mb-4 text-3xl font-bold">Find Your Dream Home in Summerlin West</h2>
           <p className="mx-auto max-w-2xl text-gray-600">
             Browse our current listings powered by RealScout with real-time MLS
             data
@@ -516,7 +516,7 @@ function FeaturedProperties({
       <div className="container mx-auto px-4">
         <div className="mb-12 flex items-center justify-between">
           <div>
-            <h3 className="text-3xl font-bold">Featured Properties</h3>
+            <h2 className="text-3xl font-bold">Featured Luxury Properties in Summerlin West</h2>
             <p className="mt-2 text-gray-600">
               Hand-picked luxury homes available now
             </p>
@@ -651,7 +651,7 @@ function CommunitiesPreview({
     <section className="bg-gray-50 py-16">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
-          <h3 className="mb-4 text-3xl font-bold">Explore Communities</h3>
+          <h2 className="mb-4 text-3xl font-bold">Explore Summerlin West Communities</h2>
           <p className="mx-auto max-w-2xl text-gray-600">
             Each community offers unique amenities and lifestyle options
           </p>
@@ -723,9 +723,9 @@ function TestimonialsSection() {
   return (
     <section className="bg-white py-16">
       <div className="container mx-auto px-4">
-        <h3 className="mb-12 text-center text-3xl font-bold">
-          What Our Clients Say
-        </h3>
+        <h2 className="mb-12 text-center text-3xl font-bold">
+          What Our Summerlin West Clients Say
+        </h2>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {testimonials.map((testimonial) => (
@@ -758,9 +758,9 @@ function CTASection() {
   return (
     <section className="bg-gradient-to-br from-amber-600 to-orange-600 py-16">
       <div className="container mx-auto px-4 text-center">
-        <h3 className="mb-4 text-3xl font-bold text-white">
-          Ready to Find Your Dream Home?
-        </h3>
+        <h2 className="mb-4 text-3xl font-bold text-white">
+          Ready to Find Your Dream Home in Summerlin West?
+        </h2>
         <p className="mx-auto mb-8 max-w-2xl text-white/90">
           Join thousands of satisfied homeowners who have found their perfect
           property in Summerlin West
@@ -947,7 +947,7 @@ function AboutSection() {
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-4xl">
           <h2 className="mb-8 text-center text-3xl font-bold">
-            About Summerlin West
+            About Summerlin West Homes - Your Trusted Real Estate Partner
           </h2>
 
           <div className="prose prose-lg mx-auto text-gray-600">
@@ -1004,7 +1004,7 @@ function AboutSection() {
       <section className="bg-gray-50 py-16">
         <div className="container mx-auto px-4">
           <div className="mb-8 text-center">
-            <h3 className="mb-4 text-3xl font-bold">Featured Properties</h3>
+            <h3 className="mb-4 text-3xl font-bold">Featured Properties in Summerlin West</h3>
             <p className="mx-auto max-w-2xl text-gray-600">
               Explore our current listings and discover why Summerlin West is
               the premier choice for luxury real estate
@@ -1041,7 +1041,7 @@ function ListingsSection() {
         {/* Header */}
         <div className="mb-8">
           <h2 className="mb-4 text-4xl font-bold text-gray-900">
-            Summerlin West Properties
+            Summerlin West Properties - Luxury Real Estate Listings
           </h2>
           <p className="max-w-3xl text-xl text-gray-600">
             Discover luxury homes and properties in Summerlin West, Las Vegas.

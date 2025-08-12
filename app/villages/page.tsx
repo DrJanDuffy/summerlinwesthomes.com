@@ -171,7 +171,7 @@ export default function VillagesPage() {
       <section className="bg-gradient-to-br from-amber-600 via-orange-500 to-red-500 py-16 text-white">
         <div className="container mx-auto px-4 text-center">
           <h1 className="mb-6 text-4xl font-bold md:text-6xl">
-            Summerlin West Villages
+            Summerlin West Villages - Luxury Communities in Las Vegas
           </h1>
           <p className="mx-auto mb-8 max-w-3xl text-xl md:text-2xl">
             Discover the unique character and luxury lifestyle of each village
@@ -199,7 +199,7 @@ export default function VillagesPage() {
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="mb-6 text-3xl font-bold">
-              Summerlin West Geographic Boundaries
+              Summerlin West Geographic Boundaries & Location
             </h2>
             <div className="mb-8 grid grid-cols-1 gap-8 md:grid-cols-2">
               <div className="rounded-lg bg-gray-50 p-6">
@@ -252,7 +252,7 @@ export default function VillagesPage() {
       <section className="bg-gray-50 py-16">
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold">Explore Our Villages</h2>
+            <h2 className="mb-4 text-3xl font-bold">Explore Summerlin West Villages & Communities</h2>
             <p className="mx-auto max-w-2xl text-gray-600">
               Each village offers unique amenities, lifestyle options, and price
               points to match your preferences

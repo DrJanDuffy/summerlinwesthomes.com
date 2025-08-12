@@ -207,7 +207,7 @@ export default function PropertySearchPage() {
       <section className="bg-gradient-to-br from-amber-600 via-orange-500 to-red-500 py-16 text-white">
         <div className="container mx-auto px-4 text-center">
           <h1 className="mb-6 text-4xl font-bold md:text-6xl">
-            Find Your Dream Home in Summerlin West
+            Find Your Dream Home in Summerlin West - Luxury Real Estate Search
           </h1>
           <p className="mx-auto mb-8 max-w-3xl text-xl md:text-2xl">
             Search exclusive properties within Summerlin West boundaries - from
