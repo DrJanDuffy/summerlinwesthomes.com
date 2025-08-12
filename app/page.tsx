@@ -400,6 +400,7 @@ function HomePage({
       <HeroSection />
       <StatsBar />
       <HomeValueWidget />
+      <AdvancedSearchWidget />
       <RealScoutSearchEmbed />
       <FeaturedProperties
         properties={featuredProperties}
@@ -525,6 +526,33 @@ function HomeValueWidget() {
             Get Detailed Valuation
             <ChevronRight className="h-4 w-4" />
           </button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// RealScout Advanced Search Widget Section
+function AdvancedSearchWidget() {
+  return (
+    <section className="py-16 bg-gradient-to-br from-green-50 to-emerald-100">
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Advanced Property Search
+          </h2>
+          <p className="text-lg text-gray-600 mb-8">
+            Use our powerful search tools to find your perfect Summerlin West home
+          </p>
+        </div>
+        
+        {/* RealScout Advanced Search Widget */}
+        <div className="flex justify-center">
+          <div
+            dangerouslySetInnerHTML={{
+              __html: '<realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>'
+            }}
+          />
         </div>
       </div>
     </section>

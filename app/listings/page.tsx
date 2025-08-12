@@ -41,6 +41,27 @@ export default function ListingsPage() {
             />
           </div>
         </div>
+        
+        {/* RealScout Advanced Search Widget */}
+        <div className="mb-12">
+          <div className="max-w-4xl mx-auto text-center mb-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Advanced Property Search
+            </h2>
+            <p className="text-lg text-gray-600 mb-8">
+              Use our powerful search tools to find specific properties
+            </p>
+          </div>
+          
+          {/* RealScout Advanced Search Widget */}
+          <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-6">
+            <div
+              dangerouslySetInnerHTML={{
+                __html: '<realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>'
+              }}
+            />
+          </div>
+        </div>
 
         {/* RealScout Widget */}
         <div className="rounded-lg bg-white p-6 shadow-lg">

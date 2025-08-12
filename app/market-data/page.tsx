@@ -187,6 +187,23 @@ export default function MarketDataPage() {
             />
           </div>
         </div>
+        
+        {/* RealScout Advanced Search Widget */}
+        <div className="mt-12 text-center">
+          <h3 className="text-2xl font-bold text-gray-900 mb-6">
+            Advanced Property Search
+          </h3>
+          <p className="text-lg text-gray-600 mb-8">
+            Search for properties while analyzing market data
+          </p>
+          <div className="flex justify-center">
+            <div
+              dangerouslySetInnerHTML={{
+                __html: '<realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>'
+              }}
+            />
+          </div>
+        </div>
       </section>
 
       {/* Market Overview */}

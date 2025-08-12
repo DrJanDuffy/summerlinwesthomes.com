@@ -208,6 +208,27 @@ export default function BuyingGuidePage() {
           </p>
         </div>
 
+        {/* RealScout Advanced Search Widget */}
+        <div className="mb-16">
+          <div className="max-w-4xl mx-auto text-center mb-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Start Your Property Search
+            </h2>
+            <p className="text-lg text-gray-600 mb-8">
+              Use our advanced search tools to find your perfect Summerlin West home
+            </p>
+          </div>
+          
+          {/* RealScout Advanced Search Widget */}
+          <div className="flex justify-center">
+            <div
+              dangerouslySetInnerHTML={{
+                __html: '<realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>'
+              }}
+            />
+          </div>
+        </div>
+
         {/* Tab Navigation */}
         <div className="mb-12">
           <div className="flex flex-wrap justify-center gap-4">

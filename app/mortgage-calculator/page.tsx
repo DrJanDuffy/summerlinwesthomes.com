@@ -169,6 +169,27 @@ export default function MortgageCalculatorPage() {
           </p>
         </div>
 
+        {/* RealScout Advanced Search Widget */}
+        <div className="mb-16">
+          <div className="max-w-4xl mx-auto text-center mb-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Find Your Dream Home
+            </h2>
+            <p className="text-lg text-gray-600 mb-8">
+              Search for properties and calculate mortgage payments
+            </p>
+          </div>
+          
+          {/* RealScout Advanced Search Widget */}
+          <div className="flex justify-center">
+            <div
+              dangerouslySetInnerHTML={{
+                __html: '<realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>'
+              }}
+            />
+          </div>
+        </div>
+
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-12 lg:grid-cols-2">
             {/* Calculator Form */}
