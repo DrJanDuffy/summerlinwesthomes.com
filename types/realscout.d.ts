@@ -13,6 +13,11 @@ declare global {
           'show-filters'?: string;
           'show-sort'?: string;
           'show-pagination'?: string;
+          'page-size'?: string;
+          'hide-search'?: string;
+          'hide-listing-date'?: string;
+          'hide-listing-type'?: string;
+          'hide-map'?: string;
         },
         HTMLElement
       >;
