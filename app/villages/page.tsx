@@ -382,6 +382,28 @@ export default function VillagesPage() {
           </div>
         </div>
       </section>
+
+      {/* RealScout Listings Section */}
+      <section className="bg-gray-50 py-16">
+        <div className="container mx-auto px-4">
+          <div className="mb-8 text-center">
+            <h3 className="mb-4 text-3xl font-bold">Available Properties in Summerlin West</h3>
+            <p className="mx-auto max-w-2xl text-gray-600">
+              Browse current listings in all Summerlin West villages with real-time MLS data
+            </p>
+          </div>
+          <div className="mx-auto max-w-6xl rounded-xl bg-white p-8 shadow-xl">
+            {React.createElement('realscout-office-listings', {
+              'agent-encoded-id': 'QWdlbnQtMjI1MDUw',
+              'sort-order': 'STATUS_AND_SIGNIFICANT_CHANGE',
+              'listing-status': 'For Sale',
+              'property-types': 'SFR,MF',
+              'price-min': '600000',
+              'price-max': '750000',
+            })}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
