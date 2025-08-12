@@ -485,7 +485,7 @@ function RealScoutSearchEmbed() {
         </div>
 
         <div className="mx-auto max-w-6xl rounded-xl bg-white p-8 shadow-xl">
-          <realscout-office-listings 
+          <realscout-office-listings
             agent-encoded-id="QWdlbnQtMjI1MDUw"
             sort-order="STATUS_AND_SIGNIFICANT_CHANGE"
             listing-status="For Sale"

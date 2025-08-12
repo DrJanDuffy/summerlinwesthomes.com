@@ -86,7 +86,10 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head>
         {/* RealScout Widget Script and Styles */}
-        <script src="https://em.realscout.com/widgets/realscout-web-components.umd.js" type="module"></script>
+        <script
+          src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
+          type="module"
+        ></script>
         <style>{`
           realscout-office-listings {
             --rs-listing-divider-color: rgb(101, 141, 172);
