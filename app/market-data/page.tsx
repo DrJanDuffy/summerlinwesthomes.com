@@ -1,7 +1,16 @@
 'use client';
 
 import React, { useState } from 'react';
-import { TrendingUp, TrendingDown, Minus, BarChart3, Home, DollarSign, Calendar, MapPin } from 'lucide-react';
+import {
+  TrendingUp,
+  TrendingDown,
+  Minus,
+  BarChart3,
+  Home,
+  DollarSign,
+  Calendar,
+  MapPin,
+} from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export default function MarketDataPage() {
@@ -9,12 +18,21 @@ export default function MarketDataPage() {
   const [timeframe, setTimeframe] = useState('monthly');
 
   const villages = [
-    'All Villages', 'The Ridges', 'The Summit', 'Red Rock Country Club', 'Reverence',
-    'The Paseos', 'The Vistas', 'Mesa', 'Stonebridge', 'Redpoint', 'Shelbourne'
+    'All Villages',
+    'The Ridges',
+    'The Summit',
+    'Red Rock Country Club',
+    'Reverence',
+    'The Paseos',
+    'The Vistas',
+    'Mesa',
+    'Stonebridge',
+    'Redpoint',
+    'Shelbourne',
   ];
 
   const marketData = {
-    'all': {
+    all: {
       totalProperties: 247,
       averagePrice: 1250000,
       averageDaysOnMarket: 28,
@@ -24,7 +42,7 @@ export default function MarketDataPage() {
       yearOverYear: 8.7,
       inventoryChange: -12,
       newListings: 23,
-      soldProperties: 18
+      soldProperties: 18,
     },
     'The Ridges': {
       totalProperties: 45,
@@ -36,7 +54,7 @@ export default function MarketDataPage() {
       yearOverYear: 12.5,
       inventoryChange: -8,
       newListings: 5,
-      soldProperties: 3
+      soldProperties: 3,
     },
     'The Summit': {
       totalProperties: 60,
@@ -48,7 +66,7 @@ export default function MarketDataPage() {
       yearOverYear: 6.2,
       inventoryChange: -5,
       newListings: 8,
-      soldProperties: 7
+      soldProperties: 7,
     },
     'Red Rock Country Club': {
       totalProperties: 35,
@@ -60,11 +78,12 @@ export default function MarketDataPage() {
       yearOverYear: 15.3,
       inventoryChange: -3,
       newListings: 3,
-      soldProperties: 2
-    }
+      soldProperties: 2,
+    },
   };
 
-  const currentData = marketData[selectedVillage as keyof typeof marketData] || marketData.all;
+  const currentData =
+    marketData[selectedVillage as keyof typeof marketData] || marketData.all;
 
   const getTrendIcon = (trend: string) => {
     switch (trend) {
@@ -96,7 +115,7 @@ export default function MarketDataPage() {
       pricePerSqft: 480,
       sqft: 5200,
       daysOnMarket: 12,
-      soldDate: '2024-01-15'
+      soldDate: '2024-01-15',
     },
     {
       address: '6789 Summit View Ln',
@@ -105,7 +124,7 @@ export default function MarketDataPage() {
       pricePerSqft: 451,
       sqft: 4100,
       daysOnMarket: 8,
-      soldDate: '2024-01-18'
+      soldDate: '2024-01-18',
     },
     {
       address: '9876 Golf Club Dr',
@@ -114,45 +133,59 @@ export default function MarketDataPage() {
       pricePerSqft: 471,
       sqft: 6800,
       daysOnMarket: 15,
-      soldDate: '2024-01-20'
-    }
+      soldDate: '2024-01-20',
+    },
   ];
 
   return (
     <div className="min-h-screen bg-gray-50 pt-20">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-amber-600 via-orange-500 to-red-500 text-white py-16">
+      <section className="bg-gradient-to-br from-amber-600 via-orange-500 to-red-500 py-16 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <h1 className="mb-6 text-4xl font-bold md:text-6xl">
             Summerlin West Market Data
           </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            Real-time market insights and trends exclusively for Summerlin West properties
+          <p className="mx-auto mb-8 max-w-3xl text-xl md:text-2xl">
+            Real-time market insights and trends exclusively for Summerlin West
+            properties
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm">
-            <span className="bg-white/20 px-4 py-2 rounded-full">Real-time MLS Data</span>
-            <span className="bg-white/20 px-4 py-2 rounded-full">Village-Specific Analysis</span>
-            <span className="bg-white/20 px-4 py-2 rounded-full">Price Trends</span>
-            <span className="bg-white/20 px-4 py-2 rounded-full">Inventory Levels</span>
+            <span className="rounded-full bg-white/20 px-4 py-2">
+              Real-time MLS Data
+            </span>
+            <span className="rounded-full bg-white/20 px-4 py-2">
+              Village-Specific Analysis
+            </span>
+            <span className="rounded-full bg-white/20 px-4 py-2">
+              Price Trends
+            </span>
+            <span className="rounded-full bg-white/20 px-4 py-2">
+              Inventory Levels
+            </span>
           </div>
         </div>
       </section>
 
       {/* Market Overview */}
-      <section className="py-12 bg-white">
+      <section className="bg-white py-12">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row gap-8 mb-8">
+          <div className="mb-8 flex flex-col gap-8 lg:flex-row">
             {/* Village Selection */}
             <div className="lg:w-1/3">
-              <label className="block text-sm font-medium text-gray-700 mb-2">Select Village</label>
+              <label className="mb-2 block text-sm font-medium text-gray-700">
+                Select Village
+              </label>
               <select
                 value={selectedVillage}
                 onChange={(e) => setSelectedVillage(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                className="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-transparent focus:ring-2 focus:ring-amber-500"
                 aria-label="Select village for market data"
               >
-                {villages.map(village => (
-                  <option key={village} value={village === 'All Villages' ? 'all' : village}>
+                {villages.map((village) => (
+                  <option
+                    key={village}
+                    value={village === 'All Villages' ? 'all' : village}
+                  >
                     {village}
                   </option>
                 ))}
@@ -161,11 +194,13 @@ export default function MarketDataPage() {
 
             {/* Timeframe Selection */}
             <div className="lg:w-1/3">
-              <label className="block text-sm font-medium text-gray-700 mb-2">Timeframe</label>
+              <label className="mb-2 block text-sm font-medium text-gray-700">
+                Timeframe
+              </label>
               <select
                 value={timeframe}
                 onChange={(e) => setTimeframe(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                className="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-transparent focus:ring-2 focus:ring-amber-500"
                 aria-label="Select timeframe for market data"
               >
                 <option value="monthly">Monthly</option>
@@ -176,135 +211,127 @@ export default function MarketDataPage() {
 
             {/* Last Updated */}
             <div className="lg:w-1/3">
-              <label className="block text-sm font-medium text-gray-700 mb-2">Last Updated</label>
-              <div className="px-3 py-2 bg-gray-50 border border-gray-300 rounded-lg text-gray-600">
-                {new Date().toLocaleDateString('en-US', { 
-                  year: 'numeric', 
-                  month: 'long', 
-                  day: 'numeric',
-                  hour: '2-digit',
-                  minute: '2-digit'
-                })}
+              <label className="mb-2 block text-sm font-medium text-gray-700">
+                Last Updated
+              </label>
+              <div className="rounded-lg bg-gray-100 px-3 py-2 text-gray-600">
+                {new Date().toLocaleDateString()}
               </div>
             </div>
           </div>
 
-          {/* Key Metrics */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-gradient-to-br from-blue-500 to-blue-600 text-white p-6 rounded-xl">
-              <div className="flex items-center justify-between mb-4">
-                <Home className="h-8 w-8" />
-                <div className="flex items-center space-x-1">
-                  {getTrendIcon(currentData.marketTrend)}
-                  <span className={cn('text-sm font-medium', getTrendColor(currentData.marketTrend))}>
-                    {currentData.marketTrend === 'rising' ? '+' : currentData.marketTrend === 'declining' ? '-' : ''}
-                    {currentData.monthOverMonth}%
-                  </span>
+          {/* Key Metrics Grid */}
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <div className="rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 p-6 text-white">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm text-blue-100">Total Properties</p>
+                  <p className="text-3xl font-bold">
+                    {currentData.totalProperties}
+                  </p>
                 </div>
+                <Home className="h-8 w-8 text-blue-200" />
               </div>
-              <div className="text-3xl font-bold mb-1">{currentData.totalProperties}</div>
-              <div className="text-blue-100 text-sm">Active Listings</div>
             </div>
 
-            <div className="bg-gradient-to-br from-green-500 to-green-600 text-white p-6 rounded-xl">
-              <div className="flex items-center justify-between mb-4">
-                <DollarSign className="h-8 w-8" />
-                <div className="flex items-center space-x-1">
-                  {getTrendIcon(currentData.marketTrend)}
-                  <span className={cn('text-sm font-medium', getTrendColor(currentData.marketTrend))}>
-                    +{currentData.yearOverYear}%
-                  </span>
+            <div className="rounded-xl bg-gradient-to-br from-green-500 to-green-600 p-6 text-white">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm text-green-100">Average Price</p>
+                  <p className="text-3xl font-bold">
+                    ${(currentData.averagePrice / 1000000).toFixed(1)}M
+                  </p>
                 </div>
+                <DollarSign className="h-8 w-8 text-green-200" />
               </div>
-              <div className="text-3xl font-bold mb-1">
-                ${(currentData.averagePrice / 1000000).toFixed(1)}M
-              </div>
-              <div className="text-green-100 text-sm">Average Price</div>
             </div>
 
-            <div className="bg-gradient-to-br from-purple-500 to-purple-600 text-white p-6 rounded-xl">
-              <div className="flex items-center justify-between mb-4">
-                <BarChart3 className="h-8 w-8" />
-                <div className="flex items-center space-x-1">
-                  {getTrendIcon(currentData.marketTrend)}
-                  <span className={cn('text-sm font-medium', getTrendColor(currentData.marketTrend))}>
-                    +{currentData.yearOverYear}%
-                  </span>
+            <div className="rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 p-6 text-white">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm text-purple-100">Days on Market</p>
+                  <p className="text-3xl font-bold">
+                    {currentData.averageDaysOnMarket}
+                  </p>
                 </div>
+                <Calendar className="h-8 w-8 text-purple-200" />
               </div>
-              <div className="text-3xl font-bold mb-1">${currentData.pricePerSqft}</div>
-              <div className="text-purple-100 text-sm">Price per Sq Ft</div>
             </div>
 
-            <div className="bg-gradient-to-br from-orange-500 to-orange-600 text-white p-6 rounded-xl">
-              <div className="flex items-center justify-between mb-4">
-                <Calendar className="h-8 w-8" />
-                <div className="flex items-center space-x-1">
-                  {getTrendIcon(currentData.marketTrend)}
-                  <span className={cn('text-sm font-medium', getTrendColor(currentData.marketTrend))}>
-                    {currentData.inventoryChange > 0 ? '+' : ''}{currentData.inventoryChange}%
-                  </span>
+            <div className="rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 p-6 text-white">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm text-amber-100">Price per Sq Ft</p>
+                  <p className="text-3xl font-bold">
+                    ${currentData.pricePerSqft}
+                  </p>
                 </div>
+                <BarChart3 className="h-8 w-8 text-amber-200" />
               </div>
-              <div className="text-3xl font-bold mb-1">{currentData.averageDaysOnMarket}</div>
-              <div className="text-orange-100 text-sm">Days on Market</div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Market Trends */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">Market Trends & Analysis</h2>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Price Trends */}
-            <div className="bg-white p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-bold mb-4">Price Trends</h3>
-              <div className="space-y-4">
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Month over Month</span>
-                  <span className={cn('font-semibold', currentData.monthOverMonth > 0 ? 'text-green-600' : 'text-red-600')}>
-                    {currentData.monthOverMonth > 0 ? '+' : ''}{currentData.monthOverMonth}%
-                  </span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Year over Year</span>
-                  <span className={cn('font-semibold', currentData.yearOverYear > 0 ? 'text-green-600' : 'text-red-600')}>
-                    +{currentData.yearOverYear}%
-                  </span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Market Trend</span>
-                  <div className="flex items-center space-x-2">
-                    {getTrendIcon(currentData.marketTrend)}
-                    <span className={cn('font-semibold capitalize', getTrendColor(currentData.marketTrend))}>
-                      {currentData.marketTrend}
-                    </span>
-                  </div>
-                </div>
+          {/* Market Trend */}
+          <div className="mt-8 rounded-xl border border-gray-200 bg-white p-6">
+            <div className="mb-4 flex items-center justify-between">
+              <h3 className="text-xl font-semibold text-gray-900">
+                Market Trend
+              </h3>
+              <div
+                className={cn(
+                  'flex items-center space-x-2',
+                  getTrendColor(currentData.marketTrend)
+                )}
+              >
+                {getTrendIcon(currentData.marketTrend)}
+                <span className="font-medium capitalize">
+                  {currentData.marketTrend}
+                </span>
               </div>
             </div>
 
-            {/* Inventory Analysis */}
-            <div className="bg-white p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-bold mb-4">Inventory Analysis</h3>
-              <div className="space-y-4">
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">New Listings</span>
-                  <span className="font-semibold text-green-600">{currentData.newListings}</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Sold Properties</span>
-                  <span className="font-semibold text-blue-600">{currentData.soldProperties}</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Inventory Change</span>
-                  <span className={cn('font-semibold', currentData.inventoryChange > 0 ? 'text-red-600' : 'text-green-600')}>
-                    {currentData.inventoryChange > 0 ? '+' : ''}{currentData.inventoryChange}%
-                  </span>
-                </div>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+              <div className="text-center">
+                <p className="mb-1 text-sm text-gray-600">Month over Month</p>
+                <p
+                  className={cn(
+                    'text-2xl font-bold',
+                    currentData.monthOverMonth > 0
+                      ? 'text-green-600'
+                      : 'text-red-600'
+                  )}
+                >
+                  {currentData.monthOverMonth > 0 ? '+' : ''}
+                  {currentData.monthOverMonth}%
+                </p>
+              </div>
+              <div className="text-center">
+                <p className="mb-1 text-sm text-gray-600">Year over Year</p>
+                <p
+                  className={cn(
+                    'text-2xl font-bold',
+                    currentData.yearOverYear > 0
+                      ? 'text-green-600'
+                      : 'text-red-600'
+                  )}
+                >
+                  {currentData.yearOverYear > 0 ? '+' : ''}
+                  {currentData.yearOverYear}%
+                </p>
+              </div>
+              <div className="text-center">
+                <p className="mb-1 text-sm text-gray-600">Inventory Change</p>
+                <p
+                  className={cn(
+                    'text-2xl font-bold',
+                    currentData.inventoryChange > 0
+                      ? 'text-green-600'
+                      : 'text-red-600'
+                  )}
+                >
+                  {currentData.inventoryChange > 0 ? '+' : ''}
+                  {currentData.inventoryChange}
+                </p>
               </div>
             </div>
           </div>
@@ -312,89 +339,141 @@ export default function MarketDataPage() {
       </section>
 
       {/* Recent Sales */}
-      <section className="py-16 bg-white">
+      <section className="bg-gray-50 py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">Recent Sales in Summerlin West</h2>
-          
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b border-gray-200">
-                  <th className="text-left py-3 px-4 font-semibold text-gray-700">Address</th>
-                  <th className="text-left py-3 px-4 font-semibold text-gray-700">Village</th>
-                  <th className="text-left py-3 px-4 font-semibold text-gray-700">Price</th>
-                  <th className="text-left py-3 px-4 font-semibold text-gray-700">Price/Sq Ft</th>
-                  <th className="text-left py-3 px-4 font-semibold text-gray-700">Sq Ft</th>
-                  <th className="text-left py-3 px-4 font-semibold text-gray-700">Days on Market</th>
-                  <th className="text-left py-3 px-4 font-semibold text-gray-700">Sold Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                {recentSales.map((sale, index) => (
-                  <tr key={index} className="border-b border-gray-100 hover:bg-gray-50">
-                    <td className="py-3 px-4">
-                      <div className="font-medium text-gray-900">{sale.address}</div>
-                    </td>
-                    <td className="py-3 px-4">
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
-                        {sale.village}
-                      </span>
-                    </td>
-                    <td className="py-3 px-4 font-semibold text-gray-900">
-                      ${(sale.price / 1000000).toFixed(2)}M
-                    </td>
-                    <td className="py-3 px-4 text-gray-600">${sale.pricePerSqft}</td>
-                    <td className="py-3 px-4 text-gray-600">{sale.sqft.toLocaleString()}</td>
-                    <td className="py-3 px-4 text-gray-600">{sale.daysOnMarket}</td>
-                    <td className="py-3 px-4 text-gray-600">
-                      {new Date(sale.soldDate).toLocaleDateString()}
-                    </td>
+          <h2 className="mb-8 text-center text-3xl font-bold">Recent Sales</h2>
+          <div className="overflow-hidden rounded-xl bg-white shadow-lg">
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead className="bg-gray-50">
+                  <tr>
+                    <th className="px-4 py-3 text-left font-semibold text-gray-700">
+                      Address
+                    </th>
+                    <th className="px-4 py-3 text-left font-semibold text-gray-700">
+                      Village
+                    </th>
+                    <th className="px-4 py-3 text-left font-semibold text-gray-700">
+                      Price
+                    </th>
+                    <th className="px-4 py-3 text-left font-semibold text-gray-700">
+                      Price/Sq Ft
+                    </th>
+                    <th className="px-4 py-3 text-left font-semibold text-gray-700">
+                      Square Feet
+                    </th>
+                    <th className="px-4 py-3 text-left font-semibold text-gray-700">
+                      Days on Market
+                    </th>
+                    <th className="px-4 py-3 text-left font-semibold text-gray-700">
+                      Sold Date
+                    </th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {recentSales.map((sale, index) => (
+                    <tr
+                      key={index}
+                      className="border-b border-gray-100 hover:bg-gray-50"
+                    >
+                      <td className="px-4 py-3">
+                        <div className="font-medium text-gray-900">
+                          {sale.address}
+                        </div>
+                      </td>
+                      <td className="px-4 py-3">
+                        <span className="inline-flex items-center rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-medium text-amber-800">
+                          {sale.village}
+                        </span>
+                      </td>
+                      <td className="px-4 py-3 font-semibold text-gray-900">
+                        ${(sale.price / 1000000).toFixed(2)}M
+                      </td>
+                      <td className="px-4 py-3 text-gray-600">
+                        ${sale.pricePerSqft}
+                      </td>
+                      <td className="px-4 py-3 text-gray-600">
+                        {sale.sqft.toLocaleString()}
+                      </td>
+                      <td className="px-4 py-3 text-gray-600">
+                        {sale.daysOnMarket}
+                      </td>
+                      <td className="px-4 py-3 text-gray-600">
+                        {new Date(sale.soldDate).toLocaleDateString()}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Geographic Focus */}
-      <section className="py-16 bg-gray-50">
+      <section className="bg-gray-50 py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">Summerlin West Geographic Focus</h2>
-          
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-xl shadow-lg p-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <h2 className="mb-8 text-center text-3xl font-bold">
+            Summerlin West Geographic Focus
+          </h2>
+
+          <div className="mx-auto max-w-4xl">
+            <div className="rounded-xl bg-white p-8 shadow-lg">
+              <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
                 <div>
-                  <h3 className="text-xl font-bold mb-4 text-amber-600">Boundaries</h3>
+                  <h3 className="mb-4 text-xl font-bold text-amber-600">
+                    Boundaries
+                  </h3>
                   <ul className="space-y-2 text-gray-700">
                     <li className="flex items-center space-x-2">
                       <MapPin className="h-4 w-4 text-amber-500" />
-                      <span><strong>North:</strong> Sahara Avenue</span>
+                      <span>
+                        <strong>North:</strong> Sahara Avenue
+                      </span>
                     </li>
                     <li className="flex items-center space-x-2">
                       <MapPin className="h-4 w-4 text-amber-500" />
-                      <span><strong>South:</strong> Charleston Boulevard</span>
+                      <span>
+                        <strong>South:</strong> Charleston Boulevard
+                      </span>
                     </li>
                     <li className="flex items-center space-x-2">
                       <MapPin className="h-4 w-4 text-amber-500" />
-                      <span><strong>East:</strong> 215 Beltway</span>
+                      <span>
+                        <strong>East:</strong> 215 Beltway
+                      </span>
                     </li>
                     <li className="flex items-center space-x-2">
                       <MapPin className="h-4 w-4 text-amber-500" />
-                      <span><strong>West:</strong> Red Rock Canyon</span>
+                      <span>
+                        <strong>West:</strong> Red Rock Canyon
+                      </span>
                     </li>
                   </ul>
                 </div>
-                
+
                 <div>
-                  <h3 className="text-xl font-bold mb-4 text-amber-600">Coverage</h3>
+                  <h3 className="mb-4 text-xl font-bold text-amber-600">
+                    Coverage
+                  </h3>
                   <ul className="space-y-2 text-gray-700">
-                    <li><strong>Primary Zip:</strong> 89135</li>
-                    <li><strong>Partial Zip:</strong> 89138 (Summerlin West portions only)</li>
-                    <li><strong>Total Area:</strong> 22,500 acres</li>
-                    <li><strong>Villages:</strong> 10 unique communities</li>
-                    <li><strong>Excluded:</strong> Spanish Trail, Queensridge, Tournament Hills</li>
+                    <li>
+                      <strong>Primary Zip:</strong> 89135
+                    </li>
+                    <li>
+                      <strong>Partial Zip:</strong> 89138 (Summerlin West
+                      portions only)
+                    </li>
+                    <li>
+                      <strong>Total Area:</strong> 22,500 acres
+                    </li>
+                    <li>
+                      <strong>Villages:</strong> 10 unique communities
+                    </li>
+                    <li>
+                      <strong>Excluded:</strong> Spanish Trail, Queensridge,
+                      Tournament Hills
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -404,17 +483,20 @@ export default function MarketDataPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-br from-amber-600 to-orange-600">
+      <section className="bg-gradient-to-br from-amber-600 to-orange-600 py-16">
         <div className="container mx-auto px-4 text-center">
-          <h3 className="text-3xl font-bold text-white mb-4">Need Detailed Market Analysis?</h3>
-          <p className="text-white/90 mb-8 max-w-2xl mx-auto">
-            Get personalized market reports for specific villages or property types in Summerlin West
+          <h3 className="mb-4 text-3xl font-bold text-white">
+            Need Detailed Market Analysis?
+          </h3>
+          <p className="mx-auto mb-8 max-w-2xl text-white/90">
+            Get personalized market reports for specific villages or property
+            types in Summerlin West
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-amber-600 px-8 py-3 rounded-lg font-semibold hover:shadow-xl transition-all">
+          <div className="flex flex-col justify-center gap-4 sm:flex-row">
+            <button className="rounded-lg bg-white px-8 py-3 font-semibold text-amber-600 transition-all hover:shadow-xl">
               Request Custom Report
             </button>
-            <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-amber-600 transition-all">
+            <button className="rounded-lg border-2 border-white px-8 py-3 font-semibold text-white transition-all hover:bg-white hover:text-amber-600">
               Schedule Market Consultation
             </button>
           </div>

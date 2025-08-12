@@ -14,19 +14,19 @@ interface RealScoutOfficeListingsProps {
   'sqft-min'?: string;
   'sqft-max'?: string;
   'sort-by'?: string;
-  'limit'?: string;
+  limit?: string;
   'show-filters'?: string;
   'show-sort'?: string;
   'show-pagination'?: string;
-  'theme'?: string;
+  theme?: string;
 }
 
 interface RealScoutPropertySearchProps {
   'agent-encoded-id': string;
   'show-filters'?: string;
   'show-sort'?: string;
-  'theme'?: string;
-  'placeholder'?: string;
+  theme?: string;
+  placeholder?: string;
 }
 
 interface RealScoutPropertyDetailsProps {
@@ -34,7 +34,7 @@ interface RealScoutPropertyDetailsProps {
   'agent-encoded-id': string;
   'show-contact-form'?: string;
   'show-similar'?: string;
-  'theme'?: string;
+  theme?: string;
 }
 
 export function RealScoutOfficeListings(props: RealScoutOfficeListingsProps) {

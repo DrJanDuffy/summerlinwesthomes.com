@@ -5,6 +5,7 @@ A professional, modern real estate website built with Next.js 15, TypeScript, an
 ## 🏠 Project Overview
 
 This website showcases luxury properties in Summerlin West, providing potential buyers and sellers with:
+
 - **Property Listings**: Beautiful, responsive property showcases
 - **Advanced Search**: Filter properties by price, location, features, and more
 - **Agent Profiles**: Professional agent information and contact details
@@ -24,11 +25,13 @@ This website showcases luxury properties in Summerlin West, providing potential 
 ## 🛠️ Development Setup
 
 ### Prerequisites
-- Node.js 18+ 
+
+- Node.js 18+
 - Git
 - PowerShell (for Windows users)
 
 ### Installation
+
 ```bash
 # Clone the repository
 git clone https://github.com/DrJanDuffy/summerlinwesthomes.com.git
@@ -42,6 +45,7 @@ npm run dev
 ```
 
 ### Available Scripts
+
 ```bash
 npm run dev          # Start development server with Turbopack
 npm run build        # Build for production
@@ -79,90 +83,160 @@ summerlinwesthomes.com/
 ## 🔑 Key Features
 
 ### 1. **Professional Git Automation**
+
 - Automated SSH and GPG key setup
 - Smooth git push operations
 - No more pager issues or stuck terminals
 
 ### 2. **Type-Safe Development**
+
 - Comprehensive TypeScript interfaces
 - Real estate specific data types
 - Form validation with Zod
 
 ### 3. **Modern UI/UX**
+
 - Responsive design for all devices
 - Smooth animations and transitions
 - Accessible components
 
 ### 4. **SEO Optimized**
+
 - Meta tags and Open Graph
 - Structured data for real estate
 - Performance optimized
 
-## 🎨 Design System
+## 🎯 Real Estate Features
 
-### Color Palette
-- **Primary**: Professional blues and grays
-- **Accent**: Warm earth tones
-- **Background**: Clean whites and light grays
+### Property Search & Filtering
 
-### Typography
-- **Primary**: Geist Sans (modern, readable)
-- **Monospace**: Geist Mono (for code and data)
+- Advanced search with multiple criteria
+- Real-time MLS data integration
+- Interactive maps and neighborhood info
+- Saved searches and favorites
 
-### Components
-- **Buttons**: Consistent styling with hover states
-- **Forms**: Clean, accessible input fields
-- **Cards**: Property showcase layouts
-- **Navigation**: Responsive header and footer
+### Market Analysis
+
+- Local market trends and statistics
+- Property value estimates
+- Comparative market analysis
+- Investment opportunity insights
+
+### Agent & Client Tools
+
+- Professional agent profiles
+- Lead management system
+- Client portal access
+- Automated follow-up sequences
+
+## 🚀 Performance & SEO
+
+### Core Web Vitals
+
+- Lighthouse score optimization
+- Image optimization and lazy loading
+- Code splitting and tree shaking
+- CDN integration for global performance
+
+### SEO Features
+
+- Structured data markup
+- Meta tags optimization
+- Sitemap generation
+- Robots.txt configuration
+
+## 🔧 Development Workflow
+
+### Code Quality
+
+- ESLint with Next.js rules
+- Prettier code formatting
+- TypeScript strict mode
+- Pre-commit hooks
+
+### Testing Strategy
+
+- Unit tests for utilities
+- Component testing
+- E2E testing with Playwright
+- Performance monitoring
 
 ## 📱 Responsive Design
 
-- **Mobile First**: Optimized for mobile devices
-- **Tablet**: Enhanced layouts for medium screens
-- **Desktop**: Full-featured desktop experience
-- **Touch Friendly**: Optimized for touch interactions
+### Breakpoint Strategy
+
+- Mobile-first approach
+- Tablet optimization
+- Desktop enhancements
+- Touch-friendly interactions
+
+### Accessibility
+
+- WCAG 2.1 AA compliance
+- Screen reader support
+- Keyboard navigation
+- High contrast support
 
 ## 🚀 Deployment
 
-### Vercel (Recommended)
-```bash
-# Connect to Vercel
-vercel
+### Vercel Integration
 
-# Deploy
-vercel --prod
-```
+- Automatic deployments
+- Preview environments
+- Performance monitoring
+- Edge function support
 
-### Environment Variables
-Create a `.env.local` file:
-```env
-NEXT_PUBLIC_SITE_URL=https://summerlinwesthomes.com
-NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=GA_MEASUREMENT_ID
-NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=YOUR_API_KEY
-```
+### Environment Management
+
+- Environment variables
+- Feature flags
+- A/B testing setup
+- Monitoring and alerts
+
+## 📊 Analytics & Monitoring
+
+### User Analytics
+
+- Page view tracking
+- User behavior analysis
+- Conversion funnel tracking
+- A/B test results
+
+### Performance Monitoring
+
+- Real user monitoring
+- Error tracking
+- Performance metrics
+- Uptime monitoring
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Run tests and linting
-5. Submit a pull request
+### Development Guidelines
+
+- Follow TypeScript best practices
+- Use conventional commits
+- Maintain accessibility standards
+- Test across multiple devices
+
+### Code Review Process
+
+- Pull request templates
+- Automated checks
+- Manual review requirements
+- Deployment approval workflow
 
 ## 📄 License
 
-MIT License - see LICENSE file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🏢 About Summerlin West Homes
+## 📞 Support
 
-Summerlin West Homes is a premier real estate company serving the Summerlin area of Las Vegas, Nevada. We specialize in luxury properties and provide exceptional service to buyers and sellers in this prestigious community.
+For support and questions:
 
-## 📞 Contact
-
-- **Website**: [summerlinwesthomes.com](https://summerlinwesthomes.com)
-- **Location**: Summerlin, Las Vegas, Nevada
-- **Services**: Residential real estate, luxury properties, market analysis
+- **Email**: support@summerlinwesthomes.com
+- **Phone**: (702) 555-0100
+- **Website**: https://summerlinwesthomes.com
 
 ---
 
-Built with ❤️ for the Summerlin community
+_Built with ❤️ for the Summerlin West community_

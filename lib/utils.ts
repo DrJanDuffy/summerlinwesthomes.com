@@ -45,9 +45,9 @@ export function calculateMortgage(
 ): number {
   const monthlyRate = annualRate / 100 / 12;
   const numberOfPayments = years * 12;
-  
+
   if (monthlyRate === 0) return principal / numberOfPayments;
-  
+
   return (
     (principal * monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments)) /
     (Math.pow(1 + monthlyRate, numberOfPayments) - 1)
@@ -59,7 +59,7 @@ export function debounce<T extends (...args: any[]) => any>(
   wait: number
 ): (...args: Parameters<T>) => void {
   let timeout: NodeJS.Timeout;
-  
+
   return (...args: Parameters<T>) => {
     clearTimeout(timeout);
     timeout = setTimeout(() => func(...args), wait);

@@ -1,7 +1,18 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Search, Filter, Map, Home, Bed, Bath, Square, DollarSign, MapPin, Sliders } from 'lucide-react';
+import {
+  Search,
+  Filter,
+  Map,
+  Home,
+  Bed,
+  Bath,
+  Square,
+  DollarSign,
+  MapPin,
+  Sliders,
+} from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export default function PropertySearchPage() {
@@ -14,7 +25,7 @@ export default function PropertySearchPage() {
     minSqft: '',
     propertyType: '',
     status: 'for-sale',
-    view: 'list'
+    view: 'list',
   });
 
   const [filters, setFilters] = useState({
@@ -24,20 +35,37 @@ export default function PropertySearchPage() {
     redRockViews: false,
     newConstruction: false,
     pool: false,
-    mountainViews: false
+    mountainViews: false,
   });
 
   const villages = [
-    'The Ridges', 'The Summit', 'Red Rock Country Club', 'Reverence',
-    'The Paseos', 'The Vistas', 'Mesa', 'Stonebridge', 'Redpoint', 'Shelbourne'
+    'The Ridges',
+    'The Summit',
+    'Red Rock Country Club',
+    'Reverence',
+    'The Paseos',
+    'The Vistas',
+    'Mesa',
+    'Stonebridge',
+    'Redpoint',
+    'Shelbourne',
   ];
 
   const propertyTypes = [
-    'Single Family', 'Luxury Estate', 'Golf Course Home', 'Condo', 'Townhome', '55+ Active Adult'
+    'Single Family',
+    'Luxury Estate',
+    'Golf Course Home',
+    'Condo',
+    'Townhome',
+    '55+ Active Adult',
   ];
 
   const priceRanges = [
-    'Under $700K', '$700K - $1M', '$1M - $2M', '$2M - $5M', '$5M+'
+    'Under $700K',
+    '$700K - $1M',
+    '$1M - $2M',
+    '$2M - $5M',
+    '$5M+',
   ];
 
   const [properties, setProperties] = useState([
@@ -56,10 +84,15 @@ export default function PropertySearchPage() {
       yearBuilt: 2023,
       propertyType: 'Luxury Estate',
       status: 'for-sale',
-      features: ['Golf Course View', 'Guard Gated', 'Red Rock Views', 'Pool & Spa'],
+      features: [
+        'Golf Course View',
+        'Guard Gated',
+        'Red Rock Views',
+        'Pool & Spa',
+      ],
       image: '/properties/ridges-estate.jpg',
       daysOnMarket: 12,
-      pricePerSqft: 480
+      pricePerSqft: 480,
     },
     {
       id: '2',
@@ -76,10 +109,15 @@ export default function PropertySearchPage() {
       yearBuilt: 2022,
       propertyType: 'Single Family',
       status: 'for-sale',
-      features: ['Mountain Views', 'Smart Home', 'Chef\'s Kitchen', '3-Car Garage'],
+      features: [
+        'Mountain Views',
+        'Smart Home',
+        "Chef's Kitchen",
+        '3-Car Garage',
+      ],
       image: '/properties/summit-villa.jpg',
       daysOnMarket: 8,
-      pricePerSqft: 451
+      pricePerSqft: 451,
     },
     {
       id: '3',
@@ -96,26 +134,57 @@ export default function PropertySearchPage() {
       yearBuilt: 2021,
       propertyType: 'Luxury Estate',
       status: 'for-sale',
-      features: ['Golf Course Frontage', 'Private Golf Club', 'Butler\'s Pantry', 'Guest House'],
+      features: [
+        'Golf Course Frontage',
+        'Private Golf Club',
+        "Butler's Pantry",
+        'Guest House',
+      ],
       image: '/properties/red-rock-estate.jpg',
       daysOnMarket: 15,
-      pricePerSqft: 471
-    }
+      pricePerSqft: 471,
+    },
   ]);
 
   const [filteredProperties, setFilteredProperties] = useState(properties);
 
   useEffect(() => {
     // Apply filters
-    let filtered = properties.filter(property => {
-      if (searchParams.village && property.village !== searchParams.village) return false;
-      if (searchParams.minPrice && property.price < parseInt(searchParams.minPrice)) return false;
-      if (searchParams.maxPrice && property.price > parseInt(searchParams.maxPrice)) return false;
-      if (searchParams.minBeds && property.beds < parseInt(searchParams.minBeds)) return false;
-      if (searchParams.minBaths && property.baths < parseInt(searchParams.minBaths)) return false;
-      if (searchParams.minSqft && property.sqft < parseInt(searchParams.minSqft)) return false;
-      if (searchParams.propertyType && property.propertyType !== searchParams.propertyType) return false;
-      if (searchParams.status && property.status !== searchParams.status) return false;
+    const filtered = properties.filter((property) => {
+      if (searchParams.village && property.village !== searchParams.village)
+        return false;
+      if (
+        searchParams.minPrice &&
+        property.price < parseInt(searchParams.minPrice)
+      )
+        return false;
+      if (
+        searchParams.maxPrice &&
+        property.price > parseInt(searchParams.maxPrice)
+      )
+        return false;
+      if (
+        searchParams.minBeds &&
+        property.beds < parseInt(searchParams.minBeds)
+      )
+        return false;
+      if (
+        searchParams.minBaths &&
+        property.baths < parseInt(searchParams.minBaths)
+      )
+        return false;
+      if (
+        searchParams.minSqft &&
+        property.sqft < parseInt(searchParams.minSqft)
+      )
+        return false;
+      if (
+        searchParams.propertyType &&
+        property.propertyType !== searchParams.propertyType
+      )
+        return false;
+      if (searchParams.status && property.status !== searchParams.status)
+        return false;
       return true;
     });
 
@@ -129,57 +198,77 @@ export default function PropertySearchPage() {
   };
 
   const updateSearchParam = (key: string, value: string) => {
-    setSearchParams(prev => ({ ...prev, [key]: value }));
+    setSearchParams((prev) => ({ ...prev, [key]: value }));
   };
 
   return (
     <div className="min-h-screen bg-gray-50 pt-20">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-amber-600 via-orange-500 to-red-500 text-white py-16">
+      <section className="bg-gradient-to-br from-amber-600 via-orange-500 to-red-500 py-16 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <h1 className="mb-6 text-4xl font-bold md:text-6xl">
             Find Your Dream Home in Summerlin West
           </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            Search exclusive properties within Summerlin West boundaries - from luxury estates to family homes
+          <p className="mx-auto mb-8 max-w-3xl text-xl md:text-2xl">
+            Search exclusive properties within Summerlin West boundaries - from
+            luxury estates to family homes
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm">
-            <span className="bg-white/20 px-4 py-2 rounded-full">Exclusive to Summerlin West</span>
-            <span className="bg-white/20 px-4 py-2 rounded-full">Real-time MLS Data</span>
-            <span className="bg-white/20 px-4 py-2 rounded-full">Guard Gated Communities</span>
-            <span className="bg-white/20 px-4 py-2 rounded-full">Red Rock Canyon Views</span>
+            <span className="rounded-full bg-white/20 px-4 py-2">
+              Exclusive to Summerlin West
+            </span>
+            <span className="rounded-full bg-white/20 px-4 py-2">
+              Real-time MLS Data
+            </span>
+            <span className="rounded-full bg-white/20 px-4 py-2">
+              Guard Gated Communities
+            </span>
+            <span className="rounded-full bg-white/20 px-4 py-2">
+              Red Rock Canyon Views
+            </span>
           </div>
         </div>
       </section>
 
       {/* Search Form */}
-      <section className="py-8 bg-white shadow-lg relative z-20 -mt-8">
+      <section className="relative z-20 -mt-8 bg-white py-8 shadow-lg">
         <div className="container mx-auto px-4">
-          <form onSubmit={handleSearch} className="bg-white rounded-xl shadow-xl p-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+          <form
+            onSubmit={handleSearch}
+            className="rounded-xl bg-white p-6 shadow-xl"
+          >
+            <div className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
               {/* Village Selection */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Village</label>
+                <label className="mb-2 block text-sm font-medium text-gray-700">
+                  Village
+                </label>
                 <select
                   value={searchParams.village}
                   onChange={(e) => updateSearchParam('village', e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-transparent focus:ring-2 focus:ring-amber-500"
                   aria-label="Select village"
                 >
                   <option value="">All Villages</option>
-                  {villages.map(village => (
-                    <option key={village} value={village}>{village}</option>
+                  {villages.map((village) => (
+                    <option key={village} value={village}>
+                      {village}
+                    </option>
                   ))}
                 </select>
               </div>
 
               {/* Price Range */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Min Price</label>
+                <label className="mb-2 block text-sm font-medium text-gray-700">
+                  Min Price
+                </label>
                 <select
                   value={searchParams.minPrice}
-                  onChange={(e) => updateSearchParam('minPrice', e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  onChange={(e) =>
+                    updateSearchParam('minPrice', e.target.value)
+                  }
+                  className="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-transparent focus:ring-2 focus:ring-amber-500"
                   aria-label="Select minimum price"
                 >
                   <option value="">Any Price</option>
@@ -193,11 +282,13 @@ export default function PropertySearchPage() {
 
               {/* Bedrooms */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Min Beds</label>
+                <label className="mb-2 block text-sm font-medium text-gray-700">
+                  Min Beds
+                </label>
                 <select
                   value={searchParams.minBeds}
                   onChange={(e) => updateSearchParam('minBeds', e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-transparent focus:ring-2 focus:ring-amber-500"
                   aria-label="Select minimum bedrooms"
                 >
                   <option value="">Any</option>
@@ -211,27 +302,38 @@ export default function PropertySearchPage() {
 
               {/* Property Type */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Type</label>
+                <label className="mb-2 block text-sm font-medium text-gray-700">
+                  Type
+                </label>
                 <select
                   value={searchParams.propertyType}
-                  onChange={(e) => updateSearchParam('propertyType', e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  onChange={(e) =>
+                    updateSearchParam('propertyType', e.target.value)
+                  }
+                  className="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-transparent focus:ring-2 focus:ring-amber-500"
                   aria-label="Select property type"
                 >
                   <option value="">All Types</option>
-                  {propertyTypes.map(type => (
-                    <option key={type} value={type}>{type}</option>
+                  {propertyTypes.map((type) => (
+                    <option key={type} value={type}>
+                      {type}
+                    </option>
                   ))}
                 </select>
               </div>
             </div>
 
             {/* Advanced Filters Toggle */}
-            <div className="flex justify-between items-center mb-6">
+            <div className="mb-6 flex items-center justify-between">
               <button
                 type="button"
-                onClick={() => setFilters(prev => ({ ...prev, showFilters: !prev.showFilters }))}
-                className="flex items-center space-x-2 text-amber-600 hover:text-amber-700 font-medium"
+                onClick={() =>
+                  setFilters((prev) => ({
+                    ...prev,
+                    showFilters: !prev.showFilters,
+                  }))
+                }
+                className="flex items-center space-x-2 font-medium text-amber-600 hover:text-amber-700"
               >
                 <Sliders className="h-4 w-4" />
                 <span>Advanced Filters</span>
@@ -242,9 +344,9 @@ export default function PropertySearchPage() {
                   type="button"
                   onClick={() => updateSearchParam('view', 'list')}
                   className={cn(
-                    'px-3 py-2 rounded-lg font-medium transition-colors',
-                    searchParams.view === 'list' 
-                      ? 'bg-amber-600 text-white' 
+                    'rounded-lg px-3 py-2 font-medium transition-colors',
+                    searchParams.view === 'list'
+                      ? 'bg-amber-600 text-white'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   )}
                 >
@@ -254,9 +356,9 @@ export default function PropertySearchPage() {
                   type="button"
                   onClick={() => updateSearchParam('view', 'map')}
                   className={cn(
-                    'px-3 py-2 rounded-lg font-medium transition-colors',
-                    searchParams.view === 'map' 
-                      ? 'bg-amber-600 text-white' 
+                    'rounded-lg px-3 py-2 font-medium transition-colors',
+                    searchParams.view === 'map'
+                      ? 'bg-amber-600 text-white'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   )}
                 >
@@ -267,12 +369,17 @@ export default function PropertySearchPage() {
 
             {/* Advanced Filters */}
             {filters.showFilters && (
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 p-4 bg-gray-50 rounded-lg">
+              <div className="mb-6 grid grid-cols-2 gap-4 rounded-lg bg-gray-50 p-4 md:grid-cols-4">
                 <label className="flex items-center space-x-2">
                   <input
                     type="checkbox"
                     checked={filters.golfCourse}
-                    onChange={(e) => setFilters(prev => ({ ...prev, golfCourse: e.target.checked }))}
+                    onChange={(e) =>
+                      setFilters((prev) => ({
+                        ...prev,
+                        golfCourse: e.target.checked,
+                      }))
+                    }
                     className="rounded text-amber-600 focus:ring-amber-500"
                   />
                   <span className="text-sm">Golf Course</span>
@@ -281,7 +388,12 @@ export default function PropertySearchPage() {
                   <input
                     type="checkbox"
                     checked={filters.guardGated}
-                    onChange={(e) => setFilters(prev => ({ ...prev, guardGated: e.target.checked }))}
+                    onChange={(e) =>
+                      setFilters((prev) => ({
+                        ...prev,
+                        guardGated: e.target.checked,
+                      }))
+                    }
                     className="rounded text-amber-600 focus:ring-amber-500"
                   />
                   <span className="text-sm">Guard Gated</span>
@@ -290,7 +402,12 @@ export default function PropertySearchPage() {
                   <input
                     type="checkbox"
                     checked={filters.redRockViews}
-                    onChange={(e) => setFilters(prev => ({ ...prev, redRockViews: e.target.checked }))}
+                    onChange={(e) =>
+                      setFilters((prev) => ({
+                        ...prev,
+                        redRockViews: e.target.checked,
+                      }))
+                    }
                     className="rounded text-amber-600 focus:ring-amber-500"
                   />
                   <span className="text-sm">Red Rock Views</span>
@@ -299,10 +416,43 @@ export default function PropertySearchPage() {
                   <input
                     type="checkbox"
                     checked={filters.newConstruction}
-                    onChange={(e) => setFilters(prev => ({ ...prev, newConstruction: e.target.checked }))}
+                    onChange={(e) =>
+                      setFilters((prev) => ({
+                        ...prev,
+                        newConstruction: e.target.checked,
+                      }))
+                    }
                     className="rounded text-amber-600 focus:ring-amber-500"
                   />
                   <span className="text-sm">New Construction</span>
+                </label>
+                <label className="flex items-center space-x-2">
+                  <input
+                    type="checkbox"
+                    checked={filters.pool}
+                    onChange={(e) =>
+                      setFilters((prev) => ({
+                        ...prev,
+                        pool: e.target.checked,
+                      }))
+                    }
+                    className="rounded text-amber-600 focus:ring-amber-500"
+                  />
+                  <span className="text-sm">Pool</span>
+                </label>
+                <label className="flex items-center space-x-2">
+                  <input
+                    type="checkbox"
+                    checked={filters.mountainViews}
+                    onChange={(e) =>
+                      setFilters((prev) => ({
+                        ...prev,
+                        mountainViews: e.target.checked,
+                      }))
+                    }
+                    className="rounded text-amber-600 focus:ring-amber-500"
+                  />
+                  <span className="text-sm">Mountain Views</span>
                 </label>
               </div>
             )}
@@ -311,10 +461,10 @@ export default function PropertySearchPage() {
             <div className="text-center">
               <button
                 type="submit"
-                className="bg-amber-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-amber-700 transition-colors flex items-center justify-center space-x-2 mx-auto"
+                className="mx-auto flex items-center justify-center space-x-2 rounded-lg bg-amber-600 px-8 py-3 font-semibold text-white transition-colors hover:bg-amber-700"
               >
                 <Search className="h-5 w-5" />
-                <span>Search Summerlin West Properties</span>
+                <span>Search Properties</span>
               </button>
             </div>
           </form>
@@ -322,111 +472,124 @@ export default function PropertySearchPage() {
       </section>
 
       {/* Results Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center mb-8">
+          {/* Results Header */}
+          <div className="mb-8 flex items-center justify-between">
             <div>
-              <h2 className="text-3xl font-bold">Search Results</h2>
-              <p className="text-gray-600 mt-2">
+              <h2 className="mb-2 text-3xl font-bold text-gray-900">
+                Search Results
+              </h2>
+              <p className="text-gray-600">
                 {filteredProperties.length} properties found in Summerlin West
               </p>
             </div>
-            <div className="text-sm text-gray-500">
-              Results limited to Summerlin West boundaries
-            </div>
-          </div>
 
-          {/* RealScout Integration Notice */}
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
-            <div className="flex items-start space-x-3">
-              <div className="flex-shrink-0">
-                <Search className="h-6 w-6 text-blue-600" />
+            <div className="flex items-center space-x-4">
+              <div className="text-sm text-gray-500">
+                <MapPin className="mr-1 inline-block h-4 w-4" />
+                Summerlin West Area
               </div>
-              <div>
-                <h3 className="text-lg font-semibold text-blue-900 mb-2">
-                  RealScout MLS Integration
-                </h3>
-                <p className="text-blue-800 mb-3">
-                  This search is powered by RealScout, providing real-time MLS data exclusively for Summerlin West properties.
-                  All listings are verified and updated automatically.
-                </p>
-                <div className="text-sm text-blue-700">
-                  <strong>Geographic Focus:</strong> Properties between Sahara Ave & Charleston Blvd, west of 215 Beltway
-                </div>
+              <div className="text-sm text-gray-500">
+                <DollarSign className="mr-1 inline-block h-4 w-4" />
+                MLS Powered
               </div>
             </div>
           </div>
 
           {/* Properties Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {filteredProperties.map((property) => (
-              <div key={property.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+              <div
+                key={property.id}
+                className="overflow-hidden rounded-xl bg-white shadow-lg transition-shadow duration-300 hover:shadow-xl"
+              >
                 <div className="relative h-64 bg-gradient-to-br from-amber-400 to-orange-500">
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-amber-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      MLS #{property.mls}
+                  <div className="absolute inset-0 bg-black opacity-20"></div>
+                  <div className="absolute left-4 top-4">
+                    <span className="rounded bg-amber-600 px-2 py-1 text-xs font-semibold text-white">
+                      MLS: {property.mls}
                     </span>
                   </div>
-                  <div className="absolute top-4 right-4">
-                    <span className="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  <div className="absolute right-4 top-4">
+                    <span className="rounded-full bg-green-600 px-3 py-1 text-sm font-semibold text-white">
                       {property.daysOnMarket} Days
                     </span>
                   </div>
                 </div>
-                
+
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold text-amber-600 mb-2">{property.priceFormatted}</h3>
-                  <p className="text-gray-800 font-medium mb-2">{property.title}</p>
-                  <p className="text-gray-600 text-sm mb-3">{property.address}</p>
-                  <p className="text-amber-600 font-semibold text-sm mb-4">{property.village}</p>
-                  
-                  <div className="grid grid-cols-3 gap-4 mb-6 text-center">
+                  <h3 className="mb-2 text-2xl font-bold text-amber-600">
+                    {property.priceFormatted}
+                  </h3>
+                  <p className="mb-2 font-medium text-gray-800">
+                    {property.title}
+                  </p>
+                  <p className="mb-3 text-sm text-gray-600">
+                    {property.address}
+                  </p>
+                  <p className="mb-4 text-sm font-semibold text-amber-600">
+                    {property.village}
+                  </p>
+
+                  <div className="mb-6 grid grid-cols-3 gap-4 text-center">
                     <div>
-                      <div className="flex items-center justify-center space-x-1 text-gray-600 mb-1">
+                      <div className="mb-1 flex items-center justify-center space-x-1 text-gray-600">
                         <Bed className="h-4 w-4" />
                         <span className="text-sm">{property.beds}</span>
                       </div>
                       <span className="text-xs text-gray-500">Beds</span>
                     </div>
                     <div>
-                      <div className="flex items-center justify-center space-x-1 text-gray-600 mb-1">
+                      <div className="mb-1 flex items-center justify-center space-x-1 text-gray-600">
                         <Bath className="h-4 w-4" />
                         <span className="text-sm">{property.baths}</span>
                       </div>
                       <span className="text-xs text-gray-500">Baths</span>
                     </div>
                     <div>
-                      <div className="flex items-center justify-center space-x-1 text-gray-600 mb-1">
+                      <div className="mb-1 flex items-center justify-center space-x-1 text-gray-600">
                         <Square className="h-4 w-4" />
-                        <span className="text-sm">{property.sqft.toLocaleString()}</span>
+                        <span className="text-sm">
+                          {property.sqft.toLocaleString()}
+                        </span>
                       </div>
                       <span className="text-xs text-gray-500">Sq Ft</span>
                     </div>
                   </div>
-                  
+
                   <div className="mb-6">
-                    <div className="flex justify-between text-sm mb-2">
+                    <div className="mb-2 flex justify-between text-sm">
                       <span className="text-gray-500">Price per Sq Ft:</span>
-                      <span className="font-semibold">${property.pricePerSqft}</span>
+                      <span className="font-semibold">
+                        ${property.pricePerSqft}
+                      </span>
                     </div>
                     <div className="flex justify-between text-sm">
                       <span className="text-gray-500">Lot Size:</span>
-                      <span className="font-semibold">{property.lotSize} acres</span>
+                      <span className="font-semibold">
+                        {property.lotSize} acres
+                      </span>
                     </div>
                   </div>
-                  
+
                   <div className="mb-6">
-                    <h4 className="font-semibold mb-2 text-sm text-gray-700">Key Features:</h4>
+                    <h4 className="mb-2 text-sm font-semibold text-gray-700">
+                      Key Features:
+                    </h4>
                     <div className="flex flex-wrap gap-2">
                       {property.features.slice(0, 3).map((feature) => (
-                        <span key={feature} className="text-xs bg-amber-100 text-amber-800 px-2 py-1 rounded">
+                        <span
+                          key={feature}
+                          className="rounded bg-amber-100 px-2 py-1 text-xs text-amber-800"
+                        >
                           {feature}
                         </span>
                       ))}
                     </div>
                   </div>
-                  
-                  <button className="w-full bg-gray-900 text-white py-3 rounded-lg font-medium hover:bg-amber-600 transition-colors duration-200">
+
+                  <button className="w-full rounded-lg bg-gray-900 py-3 font-medium text-white transition-colors duration-200 hover:bg-amber-600">
                     View Details
                   </button>
                 </div>
@@ -436,25 +599,30 @@ export default function PropertySearchPage() {
 
           {/* No Results */}
           {filteredProperties.length === 0 && (
-            <div className="text-center py-16">
-              <Search className="h-16 w-16 text-gray-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-gray-600 mb-2">No Properties Found</h3>
-              <p className="text-gray-500 mb-6">
-                Try adjusting your search criteria or contact us for personalized assistance.
+            <div className="py-16 text-center">
+              <Search className="mx-auto mb-4 h-16 w-16 text-gray-400" />
+              <h3 className="mb-2 text-xl font-semibold text-gray-600">
+                No Properties Found
+              </h3>
+              <p className="mb-6 text-gray-500">
+                Try adjusting your search criteria or contact us for
+                personalized assistance.
               </p>
               <button
-                onClick={() => setSearchParams({
-                  village: '',
-                  minPrice: '',
-                  maxPrice: '',
-                  minBeds: '',
-                  minBaths: '',
-                  minSqft: '',
-                  propertyType: '',
-                  status: 'for-sale',
-                  view: 'list'
-                })}
-                className="bg-amber-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-amber-700 transition-colors"
+                onClick={() =>
+                  setSearchParams({
+                    village: '',
+                    minPrice: '',
+                    maxPrice: '',
+                    minBeds: '',
+                    minBaths: '',
+                    minSqft: '',
+                    propertyType: '',
+                    status: 'for-sale',
+                    view: 'list',
+                  })
+                }
+                className="rounded-lg bg-amber-600 px-6 py-3 font-medium text-white transition-colors hover:bg-amber-700"
               >
                 Clear All Filters
               </button>

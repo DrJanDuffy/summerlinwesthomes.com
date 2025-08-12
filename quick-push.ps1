@@ -134,7 +134,7 @@ function Test-RepositoryHealth {
 }
 
 # Function to stage and commit changes
-function Commit-Changes {
+function Save-Changes {
     param([string]$Message)
     
     try {
@@ -239,7 +239,7 @@ try {
     }
     
     # Commit changes
-    if (-not (Commit-Changes -Message $CommitMessage)) {
+    if (-not (Save-Changes -Message $CommitMessage)) {
         exit 1
     }
     

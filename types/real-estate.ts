@@ -72,7 +72,7 @@ export interface SearchFilters {
   location?: string;
 }
 
-export type PropertyType = 
+export type PropertyType =
   | 'single-family'
   | 'condo'
   | 'townhouse'
@@ -81,7 +81,7 @@ export type PropertyType =
   | 'foreclosure'
   | 'short-sale';
 
-export type PropertyStatus = 
+export type PropertyStatus =
   | 'for-sale'
   | 'under-contract'
   | 'sold'

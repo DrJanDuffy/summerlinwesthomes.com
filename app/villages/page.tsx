@@ -2,7 +2,15 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Map, Home, Mountain, Shield, Users, Star, TrendingUp } from 'lucide-react';
+import {
+  Map,
+  Home,
+  Mountain,
+  Shield,
+  Users,
+  Star,
+  TrendingUp,
+} from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export default function VillagesPage() {
@@ -14,12 +22,18 @@ export default function VillagesPage() {
       avgPrice: '$2.8M',
       priceRange: '$1M - $25M',
       rating: 4.9,
-      features: ['Golf Course', 'Guard Gated', 'Custom Estates', 'Red Rock Views'],
-      description: 'Premier golf course community with custom estates and panoramic views',
+      features: [
+        'Golf Course',
+        'Guard Gated',
+        'Custom Estates',
+        'Red Rock Views',
+      ],
+      description:
+        'Premier golf course community with custom estates and panoramic views',
       slug: 'the-ridges',
       image: '/villages/ridges.jpg',
       status: 'Active Sales',
-      hoaRange: '$200 - $800/month'
+      hoaRange: '$200 - $800/month',
     },
     {
       name: 'The Summit',
@@ -33,7 +47,7 @@ export default function VillagesPage() {
       slug: 'the-summit',
       image: '/villages/summit.jpg',
       status: 'Active Sales',
-      hoaRange: '$150 - $400/month'
+      hoaRange: '$150 - $400/month',
     },
     {
       name: 'Red Rock Country Club',
@@ -43,11 +57,12 @@ export default function VillagesPage() {
       priceRange: '$750K - $8M',
       rating: 5.0,
       features: ['Private Golf', 'Dining', 'Fitness Center', 'Spa'],
-      description: 'Exclusive country club lifestyle with world-class amenities',
+      description:
+        'Exclusive country club lifestyle with world-class amenities',
       slug: 'red-rock-country-club',
       image: '/villages/red-rock.jpg',
       status: 'Limited Inventory',
-      hoaRange: '$300 - $1,200/month'
+      hoaRange: '$300 - $1,200/month',
     },
     {
       name: 'Reverence',
@@ -61,7 +76,7 @@ export default function VillagesPage() {
       slug: 'reverence',
       image: '/villages/reverence.jpg',
       status: 'New Construction',
-      hoaRange: '$250 - $450/month'
+      hoaRange: '$250 - $450/month',
     },
     {
       name: 'The Paseos',
@@ -71,11 +86,12 @@ export default function VillagesPage() {
       priceRange: '$600K - $1.5M',
       rating: 4.6,
       features: ['Parks', 'Trails', 'Village Center', 'Schools'],
-      description: 'Family-friendly community with excellent schools and amenities',
+      description:
+        'Family-friendly community with excellent schools and amenities',
       slug: 'the-paseos',
       image: '/villages/paseos.jpg',
       status: 'Active Sales',
-      hoaRange: '$120 - $300/month'
+      hoaRange: '$120 - $300/month',
     },
     {
       name: 'The Vistas',
@@ -89,7 +105,7 @@ export default function VillagesPage() {
       slug: 'the-vistas',
       image: '/villages/vistas.jpg',
       status: 'Active Sales',
-      hoaRange: '$180 - $500/month'
+      hoaRange: '$180 - $500/month',
     },
     {
       name: 'Mesa',
@@ -103,7 +119,7 @@ export default function VillagesPage() {
       slug: 'mesa',
       image: '/villages/mesa.jpg',
       status: 'Active Sales',
-      hoaRange: '$100 - $250/month'
+      hoaRange: '$100 - $250/month',
     },
     {
       name: 'Stonebridge',
@@ -117,7 +133,7 @@ export default function VillagesPage() {
       slug: 'stonebridge',
       image: '/villages/stonebridge.jpg',
       status: 'Limited Inventory',
-      hoaRange: '$130 - $280/month'
+      hoaRange: '$130 - $280/month',
     },
     {
       name: 'Redpoint',
@@ -131,7 +147,7 @@ export default function VillagesPage() {
       slug: 'redpoint',
       image: '/villages/redpoint.jpg',
       status: 'Limited Inventory',
-      hoaRange: '$90 - $200/month'
+      hoaRange: '$90 - $200/month',
     },
     {
       name: 'Shelbourne',
@@ -145,135 +161,190 @@ export default function VillagesPage() {
       slug: 'shelbourne',
       image: '/villages/shelbourne.jpg',
       status: 'Limited Inventory',
-      hoaRange: '$110 - $240/month'
-    }
+      hoaRange: '$110 - $240/month',
+    },
   ];
 
   return (
     <div className="min-h-screen bg-gray-50 pt-20">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-amber-600 via-orange-500 to-red-500 text-white py-16">
+      <section className="bg-gradient-to-br from-amber-600 via-orange-500 to-red-500 py-16 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <h1 className="mb-6 text-4xl font-bold md:text-6xl">
             Summerlin West Villages
           </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            Discover the unique character and luxury lifestyle of each village in Summerlin West
+          <p className="mx-auto mb-8 max-w-3xl text-xl md:text-2xl">
+            Discover the unique character and luxury lifestyle of each village
+            in Summerlin West
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm">
-            <span className="bg-white/20 px-4 py-2 rounded-full">22,500 Acres</span>
-            <span className="bg-white/20 px-4 py-2 rounded-full">10 Unique Villages</span>
-            <span className="bg-white/20 px-4 py-2 rounded-full">Guard Gated</span>
-            <span className="bg-white/20 px-4 py-2 rounded-full">Red Rock Views</span>
+            <span className="rounded-full bg-white/20 px-4 py-2">
+              22,500 Acres
+            </span>
+            <span className="rounded-full bg-white/20 px-4 py-2">
+              10 Unique Villages
+            </span>
+            <span className="rounded-full bg-white/20 px-4 py-2">
+              Guard Gated
+            </span>
+            <span className="rounded-full bg-white/20 px-4 py-2">
+              Red Rock Views
+            </span>
           </div>
         </div>
       </section>
 
       {/* Geographic Overview */}
-      <section className="py-12 bg-white">
+      <section className="bg-white py-12">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Summerlin West Geographic Boundaries</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="font-semibold mb-3 text-amber-600">Boundaries</h3>
-                <ul className="text-left space-y-2 text-gray-700">
-                  <li><strong>North:</strong> Sahara Avenue</li>
-                  <li><strong>South:</strong> Charleston Boulevard</li>
-                  <li><strong>East:</strong> 215 Beltway</li>
-                  <li><strong>West:</strong> Red Rock Canyon</li>
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="mb-6 text-3xl font-bold">
+              Summerlin West Geographic Boundaries
+            </h2>
+            <div className="mb-8 grid grid-cols-1 gap-8 md:grid-cols-2">
+              <div className="rounded-lg bg-gray-50 p-6">
+                <h3 className="mb-3 font-semibold text-amber-600">
+                  Boundaries
+                </h3>
+                <ul className="space-y-2 text-left text-sm">
+                  <li>
+                    <strong>North:</strong> Sahara Avenue
+                  </li>
+                  <li>
+                    <strong>South:</strong> Charleston Boulevard
+                  </li>
+                  <li>
+                    <strong>East:</strong> 215 Beltway
+                  </li>
+                  <li>
+                    <strong>West:</strong> Red Rock Canyon
+                  </li>
                 </ul>
               </div>
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="font-semibold mb-3 text-amber-600">Zip Codes</h3>
-                <ul className="text-left space-y-2 text-gray-700">
-                  <li><strong>Primary:</strong> 89135</li>
-                  <li><strong>Partial:</strong> 89138</li>
-                  <li><strong>Coverage:</strong> Summerlin West portions only</li>
+              <div className="rounded-lg bg-gray-50 p-6">
+                <h3 className="mb-3 font-semibold text-amber-600">Coverage</h3>
+                <ul className="space-y-2 text-left text-sm">
+                  <li>
+                    <strong>Primary Zip:</strong> 89135
+                  </li>
+                  <li>
+                    <strong>Partial Zip:</strong> 89138
+                  </li>
+                  <li>
+                    <strong>Total Area:</strong> 22,500 acres
+                  </li>
+                  <li>
+                    <strong>Villages:</strong> 10 unique communities
+                  </li>
                 </ul>
               </div>
             </div>
+            <p className="mx-auto max-w-2xl text-gray-600">
+              Summerlin West is strategically located between the 215 Beltway
+              and Red Rock Canyon, offering the perfect balance of accessibility
+              and natural beauty.
+            </p>
           </div>
         </div>
       </section>
 
       {/* Villages Grid */}
-      <section className="py-16 bg-gray-50">
+      <section className="bg-gray-50 py-16">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Explore Our Villages</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Each village offers unique amenities, lifestyle options, and real estate opportunities
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 text-3xl font-bold">Explore Our Villages</h2>
+            <p className="mx-auto max-w-2xl text-gray-600">
+              Each village offers unique amenities, lifestyle options, and price
+              points to match your preferences
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {villages.map((village) => (
-              <div key={village.slug} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
-                <div className="h-48 bg-gradient-to-br from-amber-400 to-orange-500 relative">
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-amber-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+              <div
+                key={village.name}
+                className="overflow-hidden rounded-xl bg-white shadow-lg transition-shadow duration-300 hover:shadow-xl"
+              >
+                <div className="relative h-48 bg-gradient-to-br from-amber-400 to-orange-500">
+                  <div className="absolute inset-0 bg-black opacity-20"></div>
+                  <div className="absolute left-4 top-4">
+                    <span className="rounded-full bg-white/90 px-3 py-1 text-sm font-medium backdrop-blur">
                       {village.status}
                     </span>
                   </div>
-                  <div className="absolute top-4 right-4">
-                    <div className="flex items-center space-x-1 bg-white/90 backdrop-blur px-2 py-1 rounded-full">
+                  <div className="absolute right-4 top-4">
+                    <div className="flex items-center space-x-1 rounded-full bg-white/90 px-2 py-1 backdrop-blur">
                       <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
-                      <span className="text-sm font-medium">{village.rating}</span>
+                      <span className="text-sm font-medium">
+                        {village.rating}
+                      </span>
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="p-6">
-                  <div className="flex justify-between items-start mb-4">
+                  <div className="mb-4 flex items-start justify-between">
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-900">{village.name}</h3>
-                      <p className="text-amber-600 font-semibold">{village.type}</p>
+                      <h3 className="text-2xl font-bold text-gray-900">
+                        {village.name}
+                      </h3>
+                      <p className="font-semibold text-amber-600">
+                        {village.type}
+                      </p>
                     </div>
-                    <span className="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-medium">
+                    <span className="rounded-full bg-amber-100 px-3 py-1 text-sm font-medium text-amber-800">
                       {village.homes} Homes
                     </span>
                   </div>
-                  
-                  <p className="text-gray-600 mb-4">{village.description}</p>
-                  
-                  <div className="grid grid-cols-2 gap-4 mb-6">
+
+                  <p className="mb-4 text-gray-600">{village.description}</p>
+
+                  <div className="mb-6 grid grid-cols-2 gap-4">
                     <div>
                       <p className="text-sm text-gray-500">Avg Price</p>
-                      <p className="font-semibold text-gray-900">{village.avgPrice}</p>
+                      <p className="font-semibold text-gray-900">
+                        {village.avgPrice}
+                      </p>
                     </div>
                     <div>
                       <p className="text-sm text-gray-500">HOA Range</p>
-                      <p className="font-semibold text-gray-900">{village.hoaRange}</p>
+                      <p className="font-semibold text-gray-900">
+                        {village.hoaRange}
+                      </p>
                     </div>
                   </div>
-                  
+
                   <div className="mb-6">
-                    <h4 className="font-semibold mb-2 text-sm text-gray-700">Key Features:</h4>
+                    <h4 className="mb-2 text-sm font-semibold text-gray-700">
+                      Key Features:
+                    </h4>
                     <div className="flex flex-wrap gap-2">
                       {village.features.slice(0, 3).map((feature) => (
-                        <span key={feature} className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">
+                        <span
+                          key={feature}
+                          className="rounded bg-gray-100 px-2 py-1 text-xs text-gray-700"
+                        >
                           {feature}
                         </span>
                       ))}
                       {village.features.length > 3 && (
-                        <span className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">
+                        <span className="rounded bg-gray-100 px-2 py-1 text-xs text-gray-700">
                           +{village.features.length - 3} more
                         </span>
                       )}
                     </div>
                   </div>
-                  
+
                   <div className="flex gap-3">
-                    <Link 
+                    <Link
                       href={`/villages/${village.slug}`}
-                      className="flex-1 bg-amber-600 text-white py-3 rounded-lg font-medium hover:bg-amber-700 transition-colors text-center"
+                      className="flex-1 rounded-lg bg-amber-600 py-3 text-center font-medium text-white transition-colors hover:bg-amber-700"
                     >
                       Explore Village
                     </Link>
-                    <Link 
+                    <Link
                       href={`/properties/search?village=${village.slug}`}
-                      className="flex-1 border border-amber-600 text-amber-600 py-3 rounded-lg font-medium hover:bg-amber-50 transition-colors text-center"
+                      className="flex-1 rounded-lg border border-amber-600 py-3 text-center font-medium text-amber-600 transition-colors hover:bg-amber-50"
                     >
                       View Homes
                     </Link>
@@ -286,22 +357,25 @@ export default function VillagesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-white">
+      <section className="bg-white py-16">
         <div className="container mx-auto px-4 text-center">
-          <h3 className="text-3xl font-bold mb-4">Ready to Find Your Perfect Village?</h3>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            Let us help you discover the perfect Summerlin West village for your lifestyle and budget
+          <h3 className="mb-4 text-3xl font-bold">
+            Ready to Find Your Perfect Village?
+          </h3>
+          <p className="mx-auto mb-8 max-w-2xl text-gray-600">
+            Let us help you discover the perfect Summerlin West village for your
+            lifestyle and budget
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
+          <div className="flex flex-col justify-center gap-4 sm:flex-row">
+            <Link
               href="/properties/search"
-              className="bg-amber-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-amber-700 transition-colors"
+              className="rounded-lg bg-amber-600 px-8 py-3 font-semibold text-white transition-colors hover:bg-amber-700"
             >
               Search All Properties
             </Link>
-            <Link 
+            <Link
               href="/contact"
-              className="border-2 border-amber-600 text-amber-600 px-8 py-3 rounded-lg font-semibold hover:bg-amber-50 transition-colors"
+              className="rounded-lg border-2 border-amber-600 px-8 py-3 font-semibold text-amber-600 transition-colors hover:bg-amber-50"
             >
               Schedule Village Tour
             </Link>

@@ -1,31 +1,32 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next';
+import { Geist, Geist_Mono } from 'next/font/google';
+import './globals.css';
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
-  title: "Summerlin West Homes | Luxury Real Estate in Las Vegas",
-  description: "Discover luxury homes and properties in Summerlin West, Las Vegas. Expert real estate services with local market knowledge and personalized attention.",
+  title: 'Summerlin West Homes | Luxury Real Estate in Las Vegas',
+  description:
+    'Discover luxury homes and properties in Summerlin West, Las Vegas. Expert real estate services with local market knowledge and personalized attention.',
   keywords: [
-    "Summerlin West Homes",
-    "Las Vegas Real Estate",
-    "Luxury Homes",
-    "Summerlin Properties",
-    "Nevada Real Estate",
-    "Las Vegas Homes for Sale"
+    'Summerlin West Homes',
+    'Las Vegas Real Estate',
+    'Luxury Homes',
+    'Summerlin Properties',
+    'Nevada Real Estate',
+    'Las Vegas Homes for Sale',
   ],
-  authors: [{ name: "Summerlin West Homes" }],
-  creator: "Summerlin West Homes",
-  publisher: "Summerlin West Homes",
+  authors: [{ name: 'Summerlin West Homes' }],
+  creator: 'Summerlin West Homes',
+  publisher: 'Summerlin West Homes',
   formatDetection: {
     email: false,
     address: false,
@@ -36,8 +37,9 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: "Summerlin West Homes | Luxury Real Estate in Las Vegas",
-    description: "Discover luxury homes and properties in Summerlin West, Las Vegas. Expert real estate services with local market knowledge and personalized attention.",
+    title: 'Summerlin West Homes | Luxury Real Estate in Las Vegas',
+    description:
+      'Discover luxury homes and properties in Summerlin West, Las Vegas. Expert real estate services with local market knowledge and personalized attention.',
     url: 'https://summerlinwesthomes.com',
     siteName: 'Summerlin West Homes',
     locale: 'en_US',
@@ -45,8 +47,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Summerlin West Homes | Luxury Real Estate in Las Vegas",
-    description: "Discover luxury homes and properties in Summerlin West, Las Vegas.",
+    title: 'Summerlin West Homes | Luxury Real Estate in Las Vegas',
+    description:
+      'Discover luxury homes and properties in Summerlin West, Las Vegas.',
   },
   robots: {
     index: true,
@@ -81,19 +84,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <head>
-        {/* Add RealScout widget styles */}
-        <style>{`
-          realscout-office-listings {
-            --rs-listing-divider-color: rgb(101, 141, 172);
-            width: 100%;
-          }
-        `}</style>
-        {/* Add RealScout widget script */}
-        <script src="https://em.realscout.com/widgets/realscout-web-components.umd.js" type="module"></script>
-      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-gray-900`}
+        className={`${geistSans.variable} ${geistMono.variable} bg-white text-gray-900 antialiased`}
       >
         {children}
       </body>
