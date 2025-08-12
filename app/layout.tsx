@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -81,10 +82,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        {/* Add RealScout widget styles */}
+        <style>{`
+          realscout-office-listings {
+            --rs-listing-divider-color: rgb(101, 141, 172);
+            width: 100%;
+          }
+        `}</style>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-gray-900`}
       >
         {children}
+        
+        {/* Add RealScout widget script before closing body */}
+        <Script 
+          src="https://em.realscout.com/widgets/realscout-web-components.umd.js" 
+          type="module"
+          strategy="beforeInteractive"
+        />
       </body>
     </html>
   );
